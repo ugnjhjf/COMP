@@ -1,2 +1,2 @@
 # COMP
-PolyU Comp undergrauduate source and code
+Computer Science & Engineering source and code
