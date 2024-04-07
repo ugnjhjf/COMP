@@ -1,0 +1,7 @@
+CREATE TABLE SELLER
+(
+    SellerID NUMBER(4) PRIMARY KEY,
+    SellerName VARCHAR(10)
+);
+
+

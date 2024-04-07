@@ -1,0 +1,13 @@
+Primitive Task:
+    private String taskName;
+    private String taskDesc;
+    private double duration;
+    private int[] taskIndex;
+    private String[] prequest;
+    private int[] prequestID;
+    private boolean isComposite;
+	
+Composite Task:
+	private String taskName;
+	private subTask[];
+	private int period;
