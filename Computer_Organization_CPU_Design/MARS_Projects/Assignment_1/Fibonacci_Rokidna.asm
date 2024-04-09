@@ -1,5 +1,6 @@
 .data
   prompt: .asciiz "This is a fibonacci calculate program. Enter a number:"
+  space: .asciiz " "
 
 .text
   main:
@@ -19,10 +20,10 @@
     #value initialize
     li $s1,0 #1nd number
     li $s2,1 #2nd number
-    li $s3,1 #counter
+    li $s3,0 #counter
 
     fibonacci:
-    blt $s3,$s0, end
+    bge $s3,$s0, end
     add $s4,$s1,$s2 #s4 for current ans
     move $s1,$s2
     move $s2,$s4
@@ -31,8 +32,14 @@
     li $v0, 1
     move $a0, $s1
     syscall
+    #print space
+    li $v0, 4
+    la $a0, space
+    syscall
     
-    add $s4,$s4,1 #couter++
+    
+    addi $s3,$s3,1 #couter++
+    
     j fibonacci
 
     #program end
