@@ -28,7 +28,6 @@ module multiplier_32_bit(
    reg next_op;  // Store the current bit to process from the multiplier
    
    integer i;
-half_adder FA1 (a,b,cin,carry);
 always @(a or b) begin
     multiplicand = {33'b0, a};  // Initialize multiplicand with 'a' and pad higher bits with 0
     multiplier = b;             // Initialize multiplier with 'b'

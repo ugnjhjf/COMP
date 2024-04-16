@@ -1,0 +1,14 @@
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 33b4f0510c144f0597f39f961df4cade --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot stimuli_adder_32bit_no_sign_behav xil_defaultlib.stimuli_adder_32bit_no_sign xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULU.v" Line 1. Module MULTU_32bit_no_sign doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.MULTU_32bit_no_sign
+Compiling module xil_defaultlib.stimuli_adder_32bit_no_sign
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot stimuli_adder_32bit_no_sign_behav

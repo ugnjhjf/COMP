@@ -1,0 +1,4 @@
+Running: xsim.dir/stimuli_adder_32bit_no_sign_behav/xsimk.exe -simmode gui -wdb stimuli_adder_32bit_no_sign_behav.wdb -simrunnum 0 -socket 55213
+Design successfully loaded
+Design Loading Memory Usage: 5848 KB (Peak: 5848 KB)
+Design Loading CPU Usage: 31 ms
