@@ -5,9 +5,11 @@ Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULU.v" Line 1. Module MULTU_32bit_no_sign doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.half_adder
+Compiling module xil_defaultlib.full_adder
+Compiling module xil_defaultlib.adder_32bit_default
 Compiling module xil_defaultlib.MULTU_32bit_no_sign
 Compiling module xil_defaultlib.stimuli_adder_32bit_no_sign
 Compiling module xil_defaultlib.glbl
