@@ -57,10 +57,6 @@ module stimuli_MULTU_32bit_unsigned();
         $finish;  // End simulation
     end
 
-    // Monitor and display results
-    initial begin
-        $monitor("Time=%t, clk=%b, reset=%b, a=%d, b=%d, ans=%h", 
-                 $time, clk, reset, a, b, ans);
-    end
+
 endmodule
 
