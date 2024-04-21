@@ -1,5 +1,5 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULU.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module MULTU_32bit_no_sign
+INFO: [VRFC 10-311] analyzing module MULTU_32bit_unsigned
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/full_adder.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module full_adder
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/half_add_32bit.v" into library xil_defaultlib
@@ -7,4 +7,4 @@ INFO: [VRFC 10-311] analyzing module adder_32bit
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/half_adder.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module half_adder
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sim_1/new/stimuli_adder_32bit_no_sign.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module stimuli_adder_32bit_no_sign
+INFO: [VRFC 10-311] analyzing module stimuli_MULTU_32bit_unsigned

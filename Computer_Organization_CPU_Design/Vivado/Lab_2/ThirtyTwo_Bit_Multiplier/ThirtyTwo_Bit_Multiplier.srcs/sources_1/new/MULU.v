@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module MULTU_32bit_no_sign(
+module MULTU_32bit_unsigned(
     input clk,
     input reset,
     input [31:0] a,

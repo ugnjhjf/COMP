@@ -22,7 +22,7 @@
 
 `timescale 1ns / 1ps
 
-module stimuli_adder_32bit_no_sign();
+module stimuli_MULTU_32bit_unsigned();
     reg clk;           // Clock signal
     reg reset;         // Reset signal
     reg [31:0] a;      // First input
@@ -30,7 +30,7 @@ module stimuli_adder_32bit_no_sign();
     wire [63:0] ans;   // Output result from the multiplier
 
     // Instantiate the Unit Under Test (UUT)
-    MULTU_32bit_no_sign uut(
+    MULTU_32bit_unsigned uut(
         .clk(clk),
         .reset(reset),
         .a(a),
