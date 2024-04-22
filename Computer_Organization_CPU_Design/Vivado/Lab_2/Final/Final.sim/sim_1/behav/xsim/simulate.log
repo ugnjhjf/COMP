@@ -1,0 +1,8 @@
+Vivado Simulator 2018.1
+Time resolution is 1 ps
+Test Case 1:       15000 x       20000 =                     0
+Test Case 2:      -15000 x       20000 =                     0
+Test Case 3:       15000 x      -20000 =                     x
+Test Case 4:      -15000 x      -20000 =                480000
+$finish called at time : 60 ns : File "C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/Final/Final.srcs/sim_1/new/test1.v" Line 60
+gned_32bit.v" Line 83
