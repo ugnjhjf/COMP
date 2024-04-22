@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_2" LaunchPart="xc7a35tcsg324-2L" LaunchTime="1713712902">
-  <File Type="PA-TCL" Name="MULT_32bit_signed.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="MULT_32bit_signed_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="MULT_32bit_signed_reports.tcl"/>
-  <File Type="RDS-RDS" Name="MULT_32bit_signed.vds"/>
-  <File Type="RDS-UTIL" Name="MULT_32bit_signed_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="MULT_32bit_signed_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="MULT_32bit_signed.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="MULT_32bit_signed_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="MULT_32bit_signed_timing_summary_synth.pb"/>
+<GenRun Id="synth_2" LaunchPart="xc7a35tcsg324-2L" LaunchTime="1713753681">
+  <File Type="PA-TCL" Name="signed_booth_multiplier.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="signed_booth_multiplier_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="signed_booth_multiplier_reports.tcl"/>
+  <File Type="RDS-RDS" Name="signed_booth_multiplier.vds"/>
+  <File Type="RDS-UTIL" Name="signed_booth_multiplier_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="signed_booth_multiplier_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="signed_booth_multiplier.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="signed_booth_multiplier_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="signed_booth_multiplier_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/MULTU_32bit_signed.v">
@@ -26,7 +26,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/half_add_32bit.v">
+    <File Path="$PSRCDIR/sources_1/new/half_adder.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -34,7 +34,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/half_adder.v">
+    <File Path="$PSRCDIR/sources_1/new/adder_32bit_signed.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -50,7 +50,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/adder_32bit_signed.v">
+    <File Path="$PSRCDIR/sources_1/new/half_add_32bit.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -68,7 +68,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="MULT_32bit_signed"/>
+      <Option Name="TopModule" Val="signed_booth_multiplier"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -78,9 +78,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

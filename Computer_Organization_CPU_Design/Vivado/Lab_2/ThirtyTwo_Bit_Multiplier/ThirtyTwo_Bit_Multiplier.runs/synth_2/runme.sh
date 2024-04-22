@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log MULT_32bit_signed.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MULT_32bit_signed.tcl
+EAStep vivado -log signed_booth_multiplier.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source signed_booth_multiplier.tcl

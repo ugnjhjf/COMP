@@ -16,10 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache C:/Users/ugnjhjf/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-8472-DESKTOP-LAOKQO9/incrSyn
 set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcsg324-2L
 
 set_param project.singleFileAddWarning.threshold 0
@@ -43,12 +40,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 
-synth_design -top MULT_32bit_signed -part xc7a35tcsg324-2L
+synth_design -top signed_booth_multiplier -part xc7a35tcsg324-2L
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef MULT_32bit_signed.dcp
-create_report "synth_2_synth_report_utilization_0" "report_utilization -file MULT_32bit_signed_utilization_synth.rpt -pb MULT_32bit_signed_utilization_synth.pb"
+write_checkpoint -force -noxdef signed_booth_multiplier.dcp
+create_report "synth_2_synth_report_utilization_0" "report_utilization -file signed_booth_multiplier_utilization_synth.rpt -pb signed_booth_multiplier_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

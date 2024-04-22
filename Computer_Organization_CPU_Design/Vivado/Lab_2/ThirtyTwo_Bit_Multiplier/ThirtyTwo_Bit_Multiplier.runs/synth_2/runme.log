@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log MULT_32bit_signed.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source MULT_32bit_signed.tcl
+    with args -log signed_booth_multiplier.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source signed_booth_multiplier.tcl
 
 
 ****** Vivado v2018.1 (64-bit)
@@ -8,53 +8,34 @@
   **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
-source MULT_32bit_signed.tcl -notrace
-Command: synth_design -top MULT_32bit_signed -part xc7a35tcsg324-2L
+source signed_booth_multiplier.tcl -notrace
+Command: synth_design -top signed_booth_multiplier -part xc7a35tcsg324-2L
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9460 
+INFO: Helper process launched with PID 9900 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 408.906 ; gain = 96.875
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 409.051 ; gain = 95.930
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'MULT_32bit_signed' [C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULTU_32bit_signed.v:3]
-WARNING: [Synth 8-6090] variable 'ACC' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULTU_32bit_signed.v:43]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULTU_32bit_signed.v:27]
-INFO: [Synth 8-6155] done synthesizing module 'MULT_32bit_signed' (1#1) [C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULTU_32bit_signed.v:3]
+INFO: [Synth 8-6157] synthesizing module 'signed_booth_multiplier' [C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULTU_32bit_signed.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'signed_booth_multiplier' (1#1) [C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULTU_32bit_signed.v:1]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 463.551 ; gain = 151.520
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 464.148 ; gain = 151.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 463.551 ; gain = 151.520
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 464.148 ; gain = 151.027
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 463.551 ; gain = 151.520
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 464.148 ; gain = 151.027
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg324-2L
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.srcs/sources_1/new/MULTU_32bit_signed.v:37]
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'MULT_32bit_signed'
-INFO: [Synth 8-5544] ROM "ACC" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "M" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "B" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "count" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "product" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                  iSTATE |                              001 |                               00
-                 iSTATE0 |                              010 |                               01
-                 iSTATE1 |                              100 |                               10
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'MULT_32bit_signed'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 463.551 ; gain = 151.520
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 464.148 ; gain = 151.027
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -68,18 +49,9 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
-+---Registers : 
-	               64 Bit    Registers := 1     
-	               32 Bit    Registers := 4     
-	                6 Bit    Registers := 1     
+	   2 Input     64 Bit       Adders := 31    
 +---Muxes : 
-	   3 Input     32 Bit        Muxes := 4     
-	   3 Input      6 Bit        Muxes := 1     
-	   3 Input      3 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 5     
+	   2 Input     64 Bit        Muxes := 32    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -87,21 +59,12 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module MULT_32bit_signed 
+Module signed_booth_multiplier 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
-+---Registers : 
-	               64 Bit    Registers := 1     
-	               32 Bit    Registers := 4     
-	                6 Bit    Registers := 1     
+	   2 Input     64 Bit       Adders := 31    
 +---Muxes : 
-	   3 Input     32 Bit        Muxes := 4     
-	   3 Input      6 Bit        Muxes := 1     
-	   3 Input      3 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 5     
+	   2 Input     64 Bit        Muxes := 32    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -120,7 +83,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -133,7 +96,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -145,7 +108,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -169,7 +132,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -182,7 +145,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -194,25 +157,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -228,45 +191,43 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    16|
-|3     |LUT1   |    31|
-|4     |LUT2   |     1|
-|5     |LUT3   |     3|
-|6     |LUT4   |    37|
-|7     |LUT5   |    35|
-|8     |LUT6   |    33|
-|9     |FDCE   |   200|
-|10    |FDPE   |     1|
-|11    |IBUF   |    66|
-|12    |OBUF   |    64|
+|1     |CARRY4 |   279|
+|2     |LUT1   |    17|
+|3     |LUT2   |    31|
+|4     |LUT3   |    68|
+|5     |LUT4   |   370|
+|6     |LUT5   |   569|
+|7     |LUT6   |   622|
+|8     |IBUF   |    64|
+|9     |OBUF   |    64|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |   488|
+|1     |top      |       |  2084|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 601.184 ; gain = 289.152
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 615.926 ; gain = 302.805
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 601.184 ; gain = 289.152
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 601.184 ; gain = 289.152
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 615.926 ; gain = 302.805
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 615.926 ; gain = 302.805
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 82 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 343 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'signed_booth_multiplier' is not ideal for floorplanning, since the cellview 'signed_booth_multiplier' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-22 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+11 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 702.008 ; gain = 403.043
-INFO: [Common 17-1381] The checkpoint 'C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.runs/synth_2/MULT_32bit_signed.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file MULT_32bit_signed_utilization_synth.rpt -pb MULT_32bit_signed_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 702.008 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Apr 21 23:22:16 2024...
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 707.852 ; gain = 407.766
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Lab_2/ThirtyTwo_Bit_Multiplier/ThirtyTwo_Bit_Multiplier.runs/synth_2/signed_booth_multiplier.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file signed_booth_multiplier_utilization_synth.rpt -pb signed_booth_multiplier_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 707.852 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 22 10:41:58 2024...
