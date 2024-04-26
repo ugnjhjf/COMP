@@ -1,0 +1,11 @@
+0.6
+2018.1
+Apr  4 2018
+19:30:32
+C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.sim/sim_1/behav/xsim/glbl.v,1522801934,verilog,,,,glbl,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sim_1/new/EightBit_Adder_Test.v,1713163376,verilog,,,,EightBit_Adder_Test,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sim_1/new/stimuli.v,1713158111,verilog,,,,stimuli,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sources_1/new/8bit_adder.v,1713163532,verilog,,C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sources_1/new/full_adder.v,,Eightbit_adder,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sources_1/new/full_adder.v,1713161672,verilog,,C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sources_1/new/half_adder.v,,full_adder,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sources_1/new/half_adder.v,1713163003,verilog,,C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sources_1/new/8bit_adder.v,,half_adder,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sources_1/new/logic_gates.v,1713151263,verilog,,C:/Users/ugnjhjf/Desktop/COMP/Computer_Organization_CPU_Design/Vivado/Vivado_Tutorial/Multipler_32bit/Multipler_32bit.srcs/sim_1/new/stimuli.v,,logic_gates,,,,,,,,
