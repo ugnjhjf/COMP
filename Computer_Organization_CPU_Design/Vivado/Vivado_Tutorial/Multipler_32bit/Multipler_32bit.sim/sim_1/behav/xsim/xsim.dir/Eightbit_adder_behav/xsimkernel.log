@@ -1,7 +1,0 @@
-Running: xsim.dir/Eightbit_adder_behav/xsimk.exe -simmode gui -wdb Eightbit_adder_behav.wdb -simrunnum 0 -socket 63883
-Design successfully loaded
-Design Loading Memory Usage: 6300 KB (Peak: 6300 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 6864 KB (Peak: 6864 KB)
-Simulation CPU Usage: 15 ms

@@ -1,6 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../FourBItAdder_with_IP.srcs/sources_1/ip/adderrr/sim/adderrr.vhd" \
-
-# Do not sort compile order
-nosort

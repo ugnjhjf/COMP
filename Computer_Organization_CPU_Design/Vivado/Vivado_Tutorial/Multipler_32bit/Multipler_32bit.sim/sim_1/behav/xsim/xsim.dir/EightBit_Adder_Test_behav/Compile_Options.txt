@@ -1,1 +1,0 @@
--wto "8335e88a2b4940e69db3fd4a154848fb" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "EightBit_Adder_Test_behav" "xil_defaultlib.EightBit_Adder_Test" "xil_defaultlib.glbl" -log "elaborate.log" 

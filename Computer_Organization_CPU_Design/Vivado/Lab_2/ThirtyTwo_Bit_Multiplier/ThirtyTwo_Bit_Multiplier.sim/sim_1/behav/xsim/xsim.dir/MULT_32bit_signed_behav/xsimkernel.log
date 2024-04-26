@@ -1,7 +1,0 @@
-Running: xsim.dir/MULT_32bit_signed_behav/xsimk.exe -simmode gui -wdb MULT_32bit_signed_behav.wdb -simrunnum 0 -socket 56398
-Design successfully loaded
-Design Loading Memory Usage: 5916 KB (Peak: 5916 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 6484 KB (Peak: 6484 KB)
-Simulation CPU Usage: 15 ms
