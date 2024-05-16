@@ -2,12 +2,14 @@ const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
+
 module.exports = {
 
     entry: path.resolve(__dirname, './src/main.js'), // 项目入口文件
     output: {
         path: path.resolve(__dirname, './dist'), // 输出目录
-        filename: 'bundle.js' // 输出文件名
+        filename: 'SHUMTszWai.js' // 输出文件名
     },
     module: {
         rules: [
@@ -37,14 +39,15 @@ module.exports = {
         ]
     },
     plugins: [
-        new VueLoaderPlugin(), // 必须添加 VueLoaderPlugin
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './public/index.html'), // HTML 模板路径
-            filename: 'index.html' // 输出的 HTML 文件名
-        })
+    new HtmlWebpackPlugin({
+    template: path.resolve(__dirname, 'index.html'), // 检查这个路径是否正确
+    filename: 'index.html'
+}),
+
     ],
     resolve: {
         alias: {
+            '@': path.resolve(__dirname, './src'), // 定义别名方便引用模块
             'vue$': 'vue/dist/vue.esm.js' // 定义别名确保编译模板
         },
         extensions: ['.js', '.vue'] // 自动解析确定的扩展
