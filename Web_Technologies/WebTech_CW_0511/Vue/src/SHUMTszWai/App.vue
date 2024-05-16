@@ -1,7 +1,10 @@
 <template>
-  <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view />
+  <div>
+    <div><h1>2159195岑子威 SHUM Tsz Wai</h1></div>
+    <div id="app">
+      <!-- <img src="./assets/logo.png"> -->
+      <router-view />
+    </div>
   </div>
 </template>
 
