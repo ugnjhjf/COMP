@@ -1,0 +1,12 @@
+0.6
+2018.1
+Apr  4 2018
+19:30:32
+C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.sim/sim_1/behav/xsim/glbl.v,1522801934,verilog,,,,glbl,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sim_1/new/tb_ext16_signed.v,1716207259,verilog,,,,tb_ext16_signed,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sim_1/new/tb_ext16_zero.v,1716208459,verilog,,,,tb_ext16_zero,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sim_1/new/tb_imem.v,1716205586,verilog,,,,tb_imem,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/ip/dist_mem_gen_1/sim/dist_mem_gen_1.v,1716204028,verilog,,C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/IMEM.v,,dist_mem_gen_1,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/IMEM.v,1716205825,verilog,,C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sim_1/new/tb_imem.v,,IMEM,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/ext16_signed.v,1716204443,verilog,,C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sim_1/new/tb_ext16_signed.v,,ext16_signed,,,,,,,,
+C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/ext16_zero.v,1716204403,verilog,,C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sim_1/new/tb_ext16_zero.v,,ext16_zero,,,,,,,,
