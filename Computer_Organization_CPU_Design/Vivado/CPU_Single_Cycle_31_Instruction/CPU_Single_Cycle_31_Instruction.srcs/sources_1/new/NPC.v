@@ -21,11 +21,12 @@
 
 
 module NPC(
-input[31:0] instr,
+input[31:0] addr,
 input reset,
 input ena,
 input clk_in,
 
-output 
+output next_addr
+    
     );
 endmodule
