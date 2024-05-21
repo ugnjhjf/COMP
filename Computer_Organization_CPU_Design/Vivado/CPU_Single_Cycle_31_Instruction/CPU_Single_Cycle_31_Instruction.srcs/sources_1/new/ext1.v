@@ -21,9 +21,10 @@
 
 
 module ext1(
-input in,
-output[31:0] out
+    input in,
+    output [31:0] out
 );
 
-assign out = {{31{imm1}}, imm1}; 
+assign out = {{31{in}}, in};
+
 endmodule
