@@ -22,7 +22,14 @@ always @(*) begin
             dm_read = 0;
             dm_write = 0;
             branch = 0;
-            ALUC = funct; // 对应的 ALU 操作
+            case (funct)
+                6'b100000: ALUC = 5'b00000; // ADD
+                6'b100010: ALUC = 5'b00010; // SUB
+                6'b100100: ALUC = 5'b00100; // AND
+                6'b100101: ALUC = 5'b00101; // OR
+                6'b101010: ALUC = 5'b01000; // SLT
+                default:   ALUC = 5'b00000; // 默认 ADD
+            endcase
         end
         6'b100011: begin // LW
             reg_dst = 0;

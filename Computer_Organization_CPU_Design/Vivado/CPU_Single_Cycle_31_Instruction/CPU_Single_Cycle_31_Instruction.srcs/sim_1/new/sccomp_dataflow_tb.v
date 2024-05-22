@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module sccomp_dataflow_tb;
 
 reg clk;
@@ -27,5 +29,10 @@ end
 
 // 生成时钟信号
 always #5 clk = ~clk;
+
+// 监视指令执行情况
+always @(posedge clk) begin
+    $display("Time: %d, PC: %h, Instruction: %h", $time, pc, inst);
+end
 
 endmodule

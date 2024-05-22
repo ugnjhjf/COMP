@@ -20,23 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-`timescale 1ns / 1ps
-module PC(                     
-    input clk,              
-    input rst,              
-    input [31:0] addr_in,   
-    output [31:0] addr_out  
+module PC(
+    input clk,
+    input rst,
+    input [31:0] addr_in,
+    output reg [31:0] addr_out
 );
 
-reg [31:0] pc_reg = 32'h00400000;
-
-assign addr_out = pc_reg;
-
-always @(negedge clk or posedge rst) begin
+always @(posedge clk or posedge rst) begin
     if (rst) begin
-        pc_reg <= 32'h00400000; 
+        addr_out <= 32'h00400000; // ³õÊ¼Öµ
     end else begin
-        pc_reg <= addr_in;
+        addr_out <= addr_in;
     end
 end
 

@@ -5,7 +5,7 @@ module sccomp_dataflow(
     output [31:0] pc
 );
 
-// å®šä¹‰å„æ¨¡å—çš„è¿çº¿ä¿¡å·
+// ¶¨Òå¸÷Ä£¿éµÄÁ¬ÏßĞÅºÅ
 wire [31:0] next_pc, current_pc, instruction, alu_result, reg_data1, reg_data2, mem_data;
 wire [31:0] imm32, alu_operand2, branch_target;
 wire [4:0] write_reg;
@@ -13,7 +13,7 @@ wire [4:0] alu_control;
 wire reg_dst, alu_src, mem_to_reg, reg_write, mem_read, mem_write, branch, zero, overflow, sign, carry;
 wire [1:0] alu_op;
 
-// å®ä¾‹åŒ– PC æ¨¡å—
+// ÊµÀı»¯ PC Ä£¿é
 PC pc_reg (
     .clk(clk_in),
     .rst(reset),
@@ -21,13 +21,13 @@ PC pc_reg (
     .addr_out(current_pc)
 );
 
-// å®ä¾‹åŒ– IMEM æ¨¡å—
+// ÊµÀı»¯ IMEM Ä£¿é
 IMEM imem (
     .addr(current_pc[11:2]),
     .instr(instruction)
 );
 
-// å®ä¾‹åŒ–æ§åˆ¶å•å…ƒ
+// ÊµÀı»¯¿ØÖÆµ¥Ôª
 CU control (
     .opcode(instruction[31:26]),
     .funct(instruction[5:0]),
@@ -41,7 +41,7 @@ CU control (
     .ALUC(alu_control)
 );
 
-// å®ä¾‹åŒ–å¯„å­˜å™¨æ–‡ä»¶
+// ÊµÀı»¯¼Ä´æÆ÷ÎÄ¼ş
 regfile regfile (
     .clk(clk_in),
     .ena(1'b1),
@@ -55,7 +55,7 @@ regfile regfile (
     .Rt(reg_data2)
 );
 
-// å®ä¾‹åŒ– ALU æ§åˆ¶å•å…ƒ
+// ÊµÀı»¯ ALU
 ALU alu (
     .aluOp(alu_control),
     .A(reg_data1),
@@ -67,7 +67,7 @@ ALU alu (
     .overflow(overflow)
 );
 
-// å®ä¾‹åŒ– DMEM
+// ÊµÀı»¯ DMEM
 DMEM dmem (
     .clk(clk_in),
     .ena(1'b1),
@@ -78,7 +78,7 @@ DMEM dmem (
     .dm_data_out(mem_data)
 );
 
-// å®ä¾‹åŒ– MUX æ¨¡å—
+// ÊµÀı»¯ MUX Ä£¿é
 MUX2to1 mux_alu_operand (
     .in0(reg_data2),
     .in1(imm32),
@@ -93,19 +93,19 @@ MUX2to1 mux_write_reg (
     .out(write_reg)
 );
 
-// ç¬¦å·æ‰©å±•ç«‹å³æ•°
-EXT16_Signed ext16_signed (
+// ·ûºÅÀ©Õ¹Á¢¼´Êı
+ext16_signed ext16_signed_inst (
     .imm16(instruction[15:0]),
     .imm32(imm32)
 );
 
-// åˆ†æ”¯åœ°å€è®¡ç®—
+// ·ÖÖ§µØÖ·¼ÆËã
 assign branch_target = current_pc + (imm32 << 2);
 
-// åˆ†æ”¯åˆ¤æ–­
+// ·ÖÖ§ÅĞ¶Ï
 assign next_pc = branch & zero ? branch_target : (current_pc + 4);
 
-// è¾“å‡ºæŒ‡ä»¤å’Œ PC
+// Êä³öÖ¸ÁîºÍ PC
 assign inst = instruction;
 assign pc = current_pc;
 

@@ -5,7 +5,7 @@ verilog xil_defaultlib  \
 "../../../../CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/CU.v" \
 "../../../../CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/DMEM.v" \
 "../../../../CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/IMEM.v" \
-"../../../../CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/MUX.v" \
+"../../../../CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/MUX2to1.v" \
 "../../../../CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/PC.v" \
 "../../../../CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/RegFile.v" \
 "../../../../CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/ext16_signed.v" \

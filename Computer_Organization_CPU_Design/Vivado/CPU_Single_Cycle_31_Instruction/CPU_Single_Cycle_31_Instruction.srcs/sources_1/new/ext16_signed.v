@@ -21,10 +21,9 @@
 
 
 module ext16_signed(
-    input [15:0] imm16, 
-    output [31:0] imm32 
+    input [15:0] imm16, // 16位立即数输入
+    output [31:0] imm32 // 32位扩展结果输出
 );
-
-assign imm32 = {{16{imm16[15]}}, imm16}; 
-
+    assign imm32 = {{16{imm16[15]}}, imm16}; // 符号扩展
 endmodule
+
