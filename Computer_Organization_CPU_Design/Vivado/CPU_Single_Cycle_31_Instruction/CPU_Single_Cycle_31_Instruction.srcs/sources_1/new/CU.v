@@ -1,14 +1,16 @@
 module CU (
-    input [5:0] opcode,  // 指令操作码
+    input [5:0] opcode,  // 指令类型码
     input [5:0] funct,   // 指令功能码（对于 R 型指令）
 
-    output reg reg_dst,      // 目标寄存器选择信号
-    output reg alu_src,      // ALU 源操作数选择信号
-    output reg mem_to_reg,   // 内存数据写回寄存器选择信号
-    output reg reg_write,    // 寄存器写使能信号
+//IMEM
+    output reg im_read,      // 指令读使能信号
+
+
+//DMEM
     output reg dm_read,      // 内存读使能信号
     output reg dm_write,     // 内存写使能信号
-    output reg branch,       // 分支信号
+
+//ALU
     output reg [4:0] ALUC    // ALU 操作选择信号
 );
 
@@ -22,14 +24,7 @@ always @(*) begin
             dm_read = 0;
             dm_write = 0;
             branch = 0;
-            case (funct)
-                6'b100000: ALUC = 5'b00000; // ADD
-                6'b100010: ALUC = 5'b00010; // SUB
-                6'b100100: ALUC = 5'b00100; // AND
-                6'b100101: ALUC = 5'b00101; // OR
-                6'b101010: ALUC = 5'b01000; // SLT
-                default:   ALUC = 5'b00000; // 默认 ADD
-            endcase
+            ALUC = funct;
         end
         6'b100011: begin // LW
             reg_dst = 0;
