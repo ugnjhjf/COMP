@@ -19,29 +19,30 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-`timescale 1ns / 1ps
-module regfile(                 
-    input clk,              
-    input ena,              
-    input rst,              
-    input reg_w,    
-    input [4:0] RdC,           
-    input [4:0] RtC,          
-    input [4:0] RsC,   
-    input [31:0] Rd,  
-    output [31:0] Rs, 
-    output [31:0] Rt
+module regfile(
+    input clk,               // 时钟信号
+    input ena,               // 使能信号
+    input rst,               // 复位信号
+    input reg_w,             // 寄存器写使能
+    input [4:0] RdC,         // 写寄存器编号
+    input [4:0] RtC,         // 读寄存器2编号
+    input [4:0] RsC,         // 读寄存器1编号
+    input [31:0] Rd,         // 写数据
+    output [31:0] Rs,        // 读数据1
+    output [31:0] Rt         // 读数据2
 );
 
+// 寄存器堆
 reg [31:0] array_reg [31:0];   
 
+// 初始化输出数据
 assign Rs = ena ? array_reg[RsC] : 32'bz;
 assign Rt = ena ? array_reg[RtC] : 32'bz; 
 
+integer i; // 在模块的开头声明变量
+
 always @(negedge clk or posedge rst) begin
     if (rst && ena) begin
-        integer i;
         for (i = 0; i < 32; i = i + 1) begin
             array_reg[i] <= 32'h0;
         end

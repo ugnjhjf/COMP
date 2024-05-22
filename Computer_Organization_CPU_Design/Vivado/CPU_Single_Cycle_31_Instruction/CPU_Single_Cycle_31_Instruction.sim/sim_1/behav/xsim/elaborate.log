@@ -1,13 +1,11 @@
 Vivado Simulator 2018.1
 Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 27e658512a654bde913cbf5af296dc9a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_ext16_zero_behav xil_defaultlib.tb_ext16_zero xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 27e658512a654bde913cbf5af296dc9a --incr --debug typical --relax --mt 2 -L dist_mem_gen_v8_0_12 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot sccomp_dataflow_tb_behav xil_defaultlib.sccomp_dataflow_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.ext16_zero
-Compiling module xil_defaultlib.tb_ext16_zero
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_ext16_zero_behav
+ERROR: [VRFC 10-2063] Module <RegFile> not found while processing module instance <regfile> [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/sccomp_dataflow.v:45]
+ERROR: [VRFC 10-2063] Module <ALU> not found while processing module instance <alu> [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/sccomp_dataflow.v:58]
+ERROR: [VRFC 10-2063] Module <DMEM> not found while processing module instance <dmem> [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/sccomp_dataflow.v:70]
+ERROR: [VRFC 10-2063] Module <MUX> not found while processing module instance <mux_alu_operand> [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/sccomp_dataflow.v:81]
+ERROR: [VRFC 10-2063] Module <EXT16_Signed> not found while processing module instance <ext16_signed> [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/new/sccomp_dataflow.v:96]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
