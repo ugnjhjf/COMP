@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.sim/sim_1/behav/xsim/xsim.dir/sccomp_dataflow_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Wed May 22 11:14:32 2024" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Wed May 22 11:25:37 2024" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2018.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2188600" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "3fa3058b-471b-429c-9493-ae227bc2a0c5" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "27e658512a654bde913cbf5af296dc9a" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "11" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "15" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz" -context "user_environment"
@@ -36,7 +36,7 @@ webtalk_add_data -client xsim -key Total_Nets -value "0" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Processes -value "96" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Instances -value "14" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Xilinx_HDL_Libraries_Used -value "secureip unimacro_ver unisims_ver " -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Time -value "0.89_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Memory -value "51512_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 1395847330 -regid "" -xml C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.sim/sim_1/behav/xsim/xsim.dir/sccomp_dataflow_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.sim/sim_1/behav/xsim/xsim.dir/sccomp_dataflow_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.sim/sim_1/behav/xsim/xsim.dir/sccomp_dataflow_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Compiler_Time -value "0.83_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Compiler_Memory -value "51560_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 4153517975 -regid "" -xml C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.sim/sim_1/behav/xsim/xsim.dir/sccomp_dataflow_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.sim/sim_1/behav/xsim/xsim.dir/sccomp_dataflow_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.sim/sim_1/behav/xsim/xsim.dir/sccomp_dataflow_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

@@ -22,6 +22,8 @@ initial begin
     #10;
     reset = 0;
 
+
+
     // 仿真一段时间
     #1000;
     $finish;

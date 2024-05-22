@@ -1,4 +1,4 @@
-Running: xsim.dir/sccomp_dataflow_tb_behav/xsimk.exe -simmode gui -wdb sccomp_dataflow_tb_behav.wdb -simrunnum 0 -socket 51031
+Running: xsim.dir/sccomp_dataflow_tb_behav/xsimk.exe -simmode gui -wdb sccomp_dataflow_tb_behav.wdb -simrunnum 0 -socket 51054
 Design successfully loaded
-Design Loading Memory Usage: 5972 KB (Peak: 5972 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 5976 KB (Peak: 5976 KB)
+Design Loading CPU Usage: 0 ms

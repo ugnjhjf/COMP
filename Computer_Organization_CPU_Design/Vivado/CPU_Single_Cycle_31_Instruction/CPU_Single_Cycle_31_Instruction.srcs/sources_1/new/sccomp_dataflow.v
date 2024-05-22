@@ -23,7 +23,7 @@ PC pc_reg (
 
 // 实例化 IMEM 模块
 IMEM imem (
-    .addr(current_pc[11:2]),
+    .addr(current_pc[11:2]),  // 指令地址低2位对齐
     .instr(instruction)
 );
 

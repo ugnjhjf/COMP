@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Mon May 20 19:23:19 2024
+// Date        : Wed May 22 11:18:50 2024
 // Host        : DESKTOP-LAOKQO9 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/ip/dist_mem_gen_1/dist_mem_gen_1_stub.v
+//               C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/CPU_Single_Cycle_31_Instruction/CPU_Single_Cycle_31_Instruction.srcs/sources_1/ip/dist_mem_gen_1/dist_mem_gen_1_stub.v
 // Design      : dist_mem_gen_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a200tsbv484-3
