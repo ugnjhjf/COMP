@@ -8,14 +8,14 @@ module DMEM(
     output [31:0] dm_data_out
 );
 
-reg [31:0] dmem [31:0];
+reg [31:0] dmem [0:1023];
+
+assign dm_data_out = (dm_read && ena) ? dmem[dm_addr[11:2]] : 32'bz;
 
 always @(posedge clk) begin
     if (ena && dm_write) begin
-        dmem[dm_addr] <= dm_data_in;
+        dmem[dm_addr[11:2]] <= dm_data_in;
     end
 end
-
-assign dm_data_out = (ena && dm_read && !dm_write) ? dmem[dm_addr] : 32'bz;
 
 endmodule

@@ -1,4 +1,4 @@
-module MUX (
+module MUX2to1 (
     input [31:0] in0,
     input [31:0] in1,
     input sel,
