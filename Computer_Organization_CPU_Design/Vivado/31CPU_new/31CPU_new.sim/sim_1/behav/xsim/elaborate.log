@@ -1,0 +1,22 @@
+Vivado Simulator 2018.1
+Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 2fa5bd9fe246468bbd7ba84e2163a5dd --incr --debug typical --relax --mt 2 -L dist_mem_gen_v8_0_12 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot CPU31_tb_behav xil_defaultlib.CPU31_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 12 differs from formal bit length 11 for port addr [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:36]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.NPC
+Compiling module xil_defaultlib.PC
+Compiling module dist_mem_gen_v8_0_12.dist_mem_gen_v8_0_12(C_FAMILY="a...
+Compiling module xil_defaultlib.dist_mem_gen_0
+Compiling module xil_defaultlib.IMEM
+Compiling module xil_defaultlib.CU
+Compiling module xil_defaultlib.RegFile
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.CPU31
+Compiling module xil_defaultlib.CPU31_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot CPU31_tb_behav

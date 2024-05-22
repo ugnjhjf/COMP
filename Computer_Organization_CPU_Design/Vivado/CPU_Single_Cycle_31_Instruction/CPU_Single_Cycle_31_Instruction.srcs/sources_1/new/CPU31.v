@@ -6,7 +6,7 @@ module CPU31(
 );
 
 wire [31:0] npc_addr_out, pc_addr_out; //NPC连接PC 和 PC连接NPC + PC连接IMEM
-wire [31:0] instruction, alu_result,alu_control;
+wire [31:0] instruction;
 
 wire [4:0] RsC_CU_RegFile,RtC_CU_RegFile,RdC_CU_RegFile; //寄存器1，寄存器2，寄存器3（目标）由CU传入ALU
 
@@ -16,8 +16,8 @@ wire [4:0] RdC,RtC,RsC; //IMEM连接RegFile
 
 wire [31:0] reg_data1,reg_data2,mem_data; //RegFile连接ALU
 
-wire [4:0] alu_control //CU控制ALU操作（add/addu）
-wire [31:0] alu_result //ALU结果传入RegFile.Rd
+wire [4:0] alu_control; //CU控制ALU操作（add/addu）
+wire [31:0] alu_result; //ALU结果传入RegFile.Rd
 
 
 
