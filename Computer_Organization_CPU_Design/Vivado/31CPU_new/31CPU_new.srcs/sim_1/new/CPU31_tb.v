@@ -47,9 +47,9 @@ wire [31:0] array_reg_ID_29;
 wire [31:0] array_reg_ID_30;
 wire [31:0] array_reg_ID_31;
 
-wire [31:0] RdC;
-wire [31:0] RsC;
-wire [31:0] RtC;
+wire [4:0] RdC;
+wire [4:0] RsC;
+wire [4:0] RtC;
 
 
 
@@ -124,7 +124,7 @@ initial begin
     reset = 0;
 
     // 仿真运行一段时间
-    #100;
+    #1000;
     $finish;
 end
 

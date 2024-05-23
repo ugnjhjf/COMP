@@ -1,18 +1,18 @@
 module CU (
     input clk_in,
     input reset,
-    input [5:0] opcode,  // Ö¸ÁîÀàÐÍÂë
-    input [5:0] funct,   // Ö¸Áî¹¦ÄÜÂë£¨¶ÔÓÚ R ÐÍÖ¸Áî£©
+    input [5:0] opcode,  // Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    input [5:0] funct,   // Ö¸ï¿½î¹¦ï¿½ï¿½ï¿½ë£¨ï¿½ï¿½ï¿½ï¿½ R ï¿½ï¿½Ö¸ï¿½î£©
     input zero,
     input overflow,
 
 //IMEM
-    output reg im_read,      // Ö¸Áî¶ÁÊ¹ÄÜÐÅºÅ
+    output reg im_read,      // Ö¸ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Åºï¿?
 
 
 //DMEM
-    output reg dm_read,      // ÄÚ´æ¶ÁÊ¹ÄÜÐÅºÅ
-    output reg dm_write,     // ÄÚ´æÐ´Ê¹ÄÜÐÅºÅ
+    output reg dm_read,      // ï¿½Ú´ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Åºï¿?
+    output reg dm_write,     // ï¿½Ú´ï¿½Ð´Ê¹ï¿½ï¿½ï¿½Åºï¿½
     output reg  reg_dst,
      output reg  alu_src,
      output reg  mem_to_reg,
@@ -22,7 +22,11 @@ module CU (
     output reg MUX_1_sel,MUX_2_sel,MUX_3_sel,MUX_4_sel,MUX_5_sel,MUX_6_sel,MUX_7_sel,MUX_8_sel,MUX_9_sel,MUX_10_sel,
 
 //ALU
-    output reg [4:0] ALUC    // ALU ²Ù×÷Ñ¡ÔñÐÅºÅ
+    output reg [4:0] ALUC,    // ALU ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Åºï¿½
+
+    //RegFIle
+    output reg reg_ena
+    
 );
 
 
@@ -34,7 +38,7 @@ always @(*) begin
     MUX_3_sel = 1;
 
     case (opcode)
-        6'b000000: begin // R ÐÍÖ¸Áî
+        6'b000000: begin // R-type
             reg_dst = 1;
             alu_src = 0;
             mem_to_reg = 0;
@@ -83,6 +87,7 @@ always @(*) begin
             MUX_5_sel = 0;
             
 
+
             reg_dst = 0;
             alu_src = 1;
             mem_to_reg = 0;
@@ -93,6 +98,12 @@ always @(*) begin
             ALUC = 5'b00000; // ADD
         end
         6'b001001:begin //ADDIU
+            MUX_9_sel = 0;
+            MUX_8_sel = 1;
+            MUX_7_sel = 0;
+            MUX_6_sel = 1;
+            MUX_5_sel = 0;
+
             reg_dst = 0;
             alu_src = 1;
             mem_to_reg = 0;
@@ -146,7 +157,7 @@ always @(*) begin
             dm_read = 0;
             dm_write = 0;
             branch = 0;
-            ALUC = 5'b00000; // Ä¬ÈÏ ADD
+            ALUC = 5'b00000; //Default ADD
         end
     endcase
 end

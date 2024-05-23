@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"CPU31_tb_func_impl.v" \
+"../../../../../31CPU_new.srcs/sim_1/new/CPU31_tb.v" \
+
+# Do not sort compile order
+nosort

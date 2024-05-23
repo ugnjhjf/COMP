@@ -3,19 +3,13 @@ Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 2fa5bd9fe246468bbd7ba84e2163a5dd --incr --debug typical --relax --mt 2 -L dist_mem_gen_v8_0_12 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot CPU31_tb_behav xil_defaultlib.CPU31_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 5 for port RsC [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sim_1/new/CPU31_tb.v:76]
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 5 for port RtC [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sim_1/new/CPU31_tb.v:77]
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 5 for port RdC [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sim_1/new/CPU31_tb.v:78]
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:66]
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_out [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:67]
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:74]
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_out [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:75]
-WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in0 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:137]
-WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in1 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:138]
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:177]
-WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port out [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:146]
-WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in0 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:169]
-WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in1 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:170]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:67]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_out [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:68]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:75]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_out [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:76]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:179]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in0 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:171]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in1 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:172]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

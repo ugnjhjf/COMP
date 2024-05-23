@@ -39,6 +39,7 @@ module CPU31(
 wire [31:0] npc_addr_out, pc_addr_out; // NPC连接PC 和 PC连接NPC + PC连接IMEM
 wire [31:0] instruction, alu_result, imm32;
 
+//CU Control Line to Module
 
 
 //CU -> MUX
@@ -50,7 +51,7 @@ wire [31:0] EXT16signed_to_MUX_9,EXT16zero_to_MUX_9;
 //RegFile -> ALU
 wire [31:0] MUX_7_to_ALU,Rs_to_MUX_7,EXT5_to_MUX_7; //Rs和MUX_7的连线
 wire [31:0] MUX_8_to_ALU,Rt_to_MUX_8,MUX_9_to_MUX_8; //Rt和MUX_8的连线
-wire [31:0] MUX_5_to_Rd;
+wire [31:0] MUX_5_to_Rd,MUX_6_to_MUX_5,MUX_4_to_MUX_5;
 //ALU.in
 wire [4:0] alu_control; // CU控制ALU操作（add/addu）
 //ALU.flag
@@ -59,7 +60,7 @@ wire ZF_to_CU,OF_to_CU;
 //MUX Connection(Data)
 wire [31:0] EXT1_to_MUX_6,MUX_10_to_EXT1;
 //MUX Connection(1 Output)
-wire MUX_6_to_MUX_5,MUX_4_to_MUX_5;
+
 wire sign_to_MUX_10,carry_to_MUX_10;
 // 实例化NPC模块
 NPC NPC (
@@ -88,6 +89,7 @@ CU control (
     .opcode(instruction[31:26]),
     .funct(instruction[5:0]),
     .ALUC(alu_control),
+
 
     .MUX_1_sel(CU_to_MUX_1),
     .MUX_2_sel(CU_to_MUX_2),
