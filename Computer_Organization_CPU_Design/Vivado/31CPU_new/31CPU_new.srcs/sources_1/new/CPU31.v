@@ -8,14 +8,38 @@ module CPU31(
     output [31:0] ALU_B,
     output [31:0] ALU_ans,
     output [4:0] ALUC,
-    output [4:0] Op,
-    output [4:0] Func
+    output [5:0] Op,
+    output [5:0] Func,
+    //EXT16_signed
+    output [15:0] ext16_signed_in,
+    output [31:0] ext16_signed_out,
+
+    output [31:0] ext16_zero_out,
+    //RegFIle
+    output [4:0] RsC,RtC,RdC,
+    output [31:0] array_reg_ID_0,array_reg_ID_1,
+    output [31:0] array_reg_ID_2,array_reg_ID_3,
+    output [31:0] array_reg_ID_4,array_reg_ID_5,
+    output [31:0] array_reg_ID_6,array_reg_ID_7,
+    output [31:0] array_reg_ID_8,array_reg_ID_9,
+    output [31:0] array_reg_ID_10,array_reg_ID_11,
+    output [31:0] array_reg_ID_12,array_reg_ID_13,
+    output [31:0] array_reg_ID_14,array_reg_ID_15,
+    output [31:0] array_reg_ID_16,array_reg_ID_17,
+    output [31:0] array_reg_ID_18,array_reg_ID_19,
+    output [31:0] array_reg_ID_20,array_reg_ID_21,
+    output [31:0] array_reg_ID_22,array_reg_ID_23,
+    output [31:0] array_reg_ID_24,array_reg_ID_25,
+    output [31:0] array_reg_ID_26,array_reg_ID_27,
+    output [31:0] array_reg_ID_28,array_reg_ID_29,
+    output [31:0] array_reg_ID_30,array_reg_ID_31
+
 );
 
 wire [31:0] npc_addr_out, pc_addr_out; // NPC连接PC 和 PC连接NPC + PC连接IMEM
 wire [31:0] instruction, alu_result, imm32;
 
-wire [4:0] RsC, RtC, RdC; // IMEM连接RegFile
+
 
 //CU -> MUX
 wire CU_to_MUX_1,CU_to_MUX_2,CU_to_MUX_3,CU_to_MUX_4,CU_to_MUX_5,CU_to_MUX_6,CU_to_MUX_7,CU_to_MUX_8,CU_to_MUX_9,CU_to_MUX_10; //CU控制MUX
@@ -53,7 +77,7 @@ PC pc_reg (
 
 // 实例化IMEM模块
 IMEM imem (
-    .addr(pc_addr_out[11:0]),
+    .addr(pc_addr_out[10:0]),
     .instr(instruction)
 );
 
@@ -63,12 +87,24 @@ CU control (
     .reset(reset),
     .opcode(instruction[31:26]),
     .funct(instruction[5:0]),
-    .ALUC(alu_control)
+    .ALUC(alu_control),
+
+    .MUX_1_sel(CU_to_MUX_1),
+    .MUX_2_sel(CU_to_MUX_2),
+    .MUX_3_sel(CU_to_MUX_3),
+    .MUX_4_sel(CU_to_MUX_4),
+    .MUX_5_sel(CU_to_MUX_5),
+    .MUX_6_sel(CU_to_MUX_6),
+    .MUX_7_sel(CU_to_MUX_7),
+    .MUX_8_sel(CU_to_MUX_8),
+    .MUX_9_sel(CU_to_MUX_9),
+    .MUX_10_sel(CU_to_MUX_10)
+
 );
 
 // 实例化寄存器文件模块
-RegFile regfile (
-    .reg_clk(clk_in),
+regfile regfile (
+    .clk_in(clk_in),
     .ena(1'b1),
     .reset(reset),
     .reg_w(1'b1), // 假设始终写入寄存器
@@ -167,4 +203,11 @@ assign ALUC = alu_control;
 //CU Test
 assign Op = instruction[31:26];
 assign Func = instruction[5:0];
+//EXT16 Signed test
+assign  ext16_signed_in = instruction[15:0];
+assign ext16_signed_out = EXT16signed_to_MUX_9;
+//EXT16 Zero test
+assign ext16_zero_out = EXT16zero_to_MUX_9;
+
+
 endmodule
