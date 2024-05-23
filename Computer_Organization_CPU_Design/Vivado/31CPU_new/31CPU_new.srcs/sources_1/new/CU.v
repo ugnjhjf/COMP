@@ -3,6 +3,8 @@ module CU (
     input reset,
     input [5:0] opcode,  // 指令类型码
     input [5:0] funct,   // 指令功能码（对于 R 型指令）
+    input zero,
+    input overflow,
 
 //IMEM
     output reg im_read,      // 指令读使能信号
@@ -34,7 +36,7 @@ always @(*) begin
     MUX_5_sel = 0;
     MUX_6_sel = 1;
     MUX_7_sel = 0;
-    MUX_8_sel = 0;
+    MUX_8_sel = 1;
     MUX_9_sel = 0;
     MUX_10_sel = 0;
     case (opcode)

@@ -20,7 +20,10 @@ CPU31 uut (
     .ALU_A(ALU_A),
     .ALU_B(ALU_B),
     .ALU_ans(ALU_ans),
-    .ALUC(ALUC)
+    .ALUC(ALUC),
+    //CU Test
+    .Op(Op),
+    .Func(Func)
 );
 
 // 时钟信号生成
@@ -40,7 +43,7 @@ end
 
 // 监视器，用于监视PC和指令
 always @(posedge clk) begin
-    $display("Time: %d, PC: %h, Instruction: %h, ALU_A: %b, ALU_B:%b, ALU_ans: %b", $time, pc, inst,ALU_A,ALU_B,ALU_ans);
+    $display("Time: %d, PC: %h, Instruction: %h, ALU_A: %b, ALU_B:%b, ALU_ans: %b, Op:%b, Func: %b", $time, pc, inst,ALU_A,ALU_B,ALU_ans,Op,Func);
 end
 
 

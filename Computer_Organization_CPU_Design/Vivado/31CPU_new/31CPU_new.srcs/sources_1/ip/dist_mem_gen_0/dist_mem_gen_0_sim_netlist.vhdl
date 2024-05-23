@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
--- Date        : Wed May 22 17:30:10 2024
+-- Date        : Wed May 22 17:30:09 2024
 -- Host        : DESKTOP-LAOKQO9 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/ip/dist_mem_gen_0/dist_mem_gen_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top dist_mem_gen_0 -prefix
+--               dist_mem_gen_0_ dist_mem_gen_0_sim_netlist.vhdl
 -- Design      : dist_mem_gen_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,8 +19,6 @@ entity dist_mem_gen_0_rom is
     spo : out STD_LOGIC_VECTOR ( 26 downto 0 );
     a : in STD_LOGIC_VECTOR ( 10 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dist_mem_gen_0_rom : entity is "rom";
 end dist_mem_gen_0_rom;
 
 architecture STRUCTURE of dist_mem_gen_0_rom is
@@ -944,8 +942,6 @@ entity dist_mem_gen_0_dist_mem_gen_v8_0_12_synth is
     spo : out STD_LOGIC_VECTOR ( 26 downto 0 );
     a : in STD_LOGIC_VECTOR ( 10 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dist_mem_gen_0_dist_mem_gen_v8_0_12_synth : entity is "dist_mem_gen_v8_0_12_synth";
 end dist_mem_gen_0_dist_mem_gen_v8_0_12_synth;
 
 architecture STRUCTURE of dist_mem_gen_0_dist_mem_gen_v8_0_12_synth is
@@ -1044,8 +1040,6 @@ entity dist_mem_gen_0_dist_mem_gen_v8_0_12 is
   attribute C_SYNC_ENABLE of dist_mem_gen_0_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_WIDTH : integer;
   attribute C_WIDTH of dist_mem_gen_0_dist_mem_gen_v8_0_12 : entity is 32;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of dist_mem_gen_0_dist_mem_gen_v8_0_12 : entity is "dist_mem_gen_v8_0_12";
 end dist_mem_gen_0_dist_mem_gen_v8_0_12;
 
 architecture STRUCTURE of dist_mem_gen_0_dist_mem_gen_v8_0_12 is

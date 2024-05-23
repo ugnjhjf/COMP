@@ -7,7 +7,9 @@ module CPU31(
     output [31:0] ALU_A,
     output [31:0] ALU_B,
     output [31:0] ALU_ans,
-    output [4:0] ALUC
+    output [4:0] ALUC,
+    output [4:0] Op,
+    output [4:0] Func
 );
 
 wire [31:0] npc_addr_out, pc_addr_out; // NPC连接PC 和 PC连接NPC + PC连接IMEM
@@ -24,15 +26,17 @@ wire [31:0] EXT16signed_to_MUX_9,EXT16zero_to_MUX_9;
 //RegFile -> ALU
 wire [31:0] MUX_7_to_ALU,Rs_to_MUX_7,EXT5_to_MUX_7; //Rs和MUX_7的连线
 wire [31:0] MUX_8_to_ALU,Rt_to_MUX_8,MUX_9_to_MUX_8; //Rt和MUX_8的连线
+wire [31:0] MUX_5_to_Rd;
 //ALU.in
 wire [4:0] alu_control; // CU控制ALU操作（add/addu）
+//ALU.flag
+wire ZF_to_CU,OF_to_CU;
 
 //MUX Connection(Data)
 wire [31:0] EXT1_to_MUX_6,MUX_10_to_EXT1;
 //MUX Connection(1 Output)
 wire MUX_6_to_MUX_5,MUX_4_to_MUX_5;
 wire sign_to_MUX_10,carry_to_MUX_10;
-
 // 实例化NPC模块
 NPC NPC (
     .addr_in(pc_addr_out),
@@ -55,22 +59,12 @@ IMEM imem (
 
 // 实例化CU模块
 CU control (
+    .clk_in(clk_in),
+    .reset(reset),
     .opcode(instruction[31:26]),
     .funct(instruction[5:0]),
     .ALUC(alu_control)
 );
-
-//ext16_signed ext16_signed (
-//    .imm16(instruction[15:0]),
-//    .imm32(imm32)
-//);
-
-//// 实例化16位零扩展模块
-//ext16_zero ext16_zero (
-//    .imm16(instruction[15:0]),
-//    .imm32(imm32) // 如果需要，可以为两个扩展模块分别使用不同的信号
-//);
-
 
 // 实例化寄存器文件模块
 RegFile regfile (
@@ -94,7 +88,9 @@ ALU alu (
     .B(MUX_8_to_ALU),
     .alu_out(alu_result),
     .sign(sign_to_MUX_10),
-    .carry(carry_to_MUX_10)
+    .carry(carry_to_MUX_10),
+    .zero(ZF_to_CU),
+    .overflow(OF_to_CU)
 );
 
 
@@ -168,4 +164,7 @@ assign ALU_A = MUX_7_to_ALU;
 assign ALU_B = MUX_8_to_ALU;
 assign ALU_ans = MUX_5_to_Rd;
 assign ALUC = alu_control;
+//CU Test
+assign Op = instruction[31:26];
+assign Func = instruction[5:0];
 endmodule
