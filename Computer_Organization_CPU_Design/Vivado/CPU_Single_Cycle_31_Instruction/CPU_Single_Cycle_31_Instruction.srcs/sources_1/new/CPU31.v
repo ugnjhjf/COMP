@@ -53,7 +53,7 @@ IMEM imem (
 CU control (
 //Input
     .opcode(instruction[31:26]), //指令类型(R-type/I-type/J-type)
-    .funct(instruction[4:0]), //具体指令(add/addu...)
+    .funct(instruction[5:0]), //具体指令(add/addu...)
 //Output
     .ALUC(alu_control)
 );
@@ -98,16 +98,18 @@ ext16_signed ext16_signed_inst (
     //Input
     .imm16(instruction[15:0]),
     //Output
-    .imm32(imm32)
+    .imm32()
 );
 
 ext16_zero ext16_zero_inst (
     //Input
     .imm16(instruction[15:0]),
     //Output
-    .imm32(imm32)
+    .imm32()
 );
 
+assign ALU_A =
+assign ALU_B = 
 assign inst = instruction;
 assign pc = pc_addr_out;
 

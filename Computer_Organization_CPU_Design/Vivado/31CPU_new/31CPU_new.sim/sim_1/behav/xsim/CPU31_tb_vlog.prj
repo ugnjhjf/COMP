@@ -5,9 +5,13 @@ verilog xil_defaultlib  \
 "../../../../31CPU_new.srcs/sources_1/new/CPU31.v" \
 "../../../../31CPU_new.srcs/sources_1/new/CU.v" \
 "../../../../31CPU_new.srcs/sources_1/new/IMEM.v" \
+"../../../../31CPU_new.srcs/sources_1/new/MUX.v" \
 "../../../../31CPU_new.srcs/sources_1/new/NPC.v" \
 "../../../../31CPU_new.srcs/sources_1/new/PC.v" \
 "../../../../31CPU_new.srcs/sources_1/new/RegFile.v" \
+"../../../../31CPU_new.srcs/sources_1/new/ext1.v" \
+"../../../../31CPU_new.srcs/sources_1/new/ext16_signed.v" \
+"../../../../31CPU_new.srcs/sources_1/new/ext16_zero.v" \
 "../../../../31CPU_new.srcs/sim_1/new/CPU31_tb.v" \
 
 # compile glbl module

@@ -3,10 +3,10 @@ module ALU(
     input [31:0] A,
     input [31:0] B,
     output [31:0] alu_out,
-    output zero,
+    // output zero,
     output sign,
-    output carry,
-    output overflow
+    output carry
+    // output overflow
 );
     
     parameter ADD = 5'b00000; 

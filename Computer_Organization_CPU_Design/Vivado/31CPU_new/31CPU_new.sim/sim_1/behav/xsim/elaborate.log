@@ -3,7 +3,22 @@ Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto 2fa5bd9fe246468bbd7ba84e2163a5dd --incr --debug typical --relax --mt 2 -L dist_mem_gen_v8_0_12 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot CPU31_tb_behav xil_defaultlib.CPU31_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 12 differs from formal bit length 11 for port addr [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:36]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port ALU_A [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sim_1/new/CPU31_tb.v:20]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port ALU_B [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sim_1/new/CPU31_tb.v:21]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port ALU_ans [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sim_1/new/CPU31_tb.v:22]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:38]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_out [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:39]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:46]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 11 for port addr_out [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:47]
+WARNING: [VRFC 10-278] actual bit length 12 differs from formal bit length 11 for port addr [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:52]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port Rd_data_in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:84]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in0 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:105]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in1 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:106]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port out [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:108]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 1 for port in [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:145]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port out [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:114]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in0 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:137]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port in1 [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:138]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -16,6 +31,10 @@ Compiling module xil_defaultlib.IMEM
 Compiling module xil_defaultlib.CU
 Compiling module xil_defaultlib.RegFile
 Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.MUX2to1
+Compiling module xil_defaultlib.ext1
+Compiling module xil_defaultlib.ext16_signed
+Compiling module xil_defaultlib.ext16_zero
 Compiling module xil_defaultlib.CPU31
 Compiling module xil_defaultlib.CPU31_tb
 Compiling module xil_defaultlib.glbl

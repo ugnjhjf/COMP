@@ -16,12 +16,27 @@ module CU (
      output reg  mem_to_reg,
     output reg   reg_write,
     output reg   branch,
+    //MUX select
+    output reg MUX_1_sel,MUX_2_sel,MUX_3_sel,MUX_4_sel,MUX_5_sel,MUX_6_sel,MUX_7_sel,MUX_8_sel,MUX_9_sel,MUX_10_sel,
 
 //ALU
     output reg [4:0] ALUC    // ALU 操作选择信号
 );
 
+
+
 always @(*) begin
+    //MUX select
+    MUX_1_sel = 0;
+    MUX_2_sel = 0;
+    MUX_3_sel = 1;
+    // MUX_4_sel = 0;
+    MUX_5_sel = 0;
+    MUX_6_sel = 1;
+    MUX_7_sel = 0;
+    MUX_8_sel = 0;
+    MUX_9_sel = 0;
+    MUX_10_sel = 0;
     case (opcode)
         6'b000000: begin // R 型指令
             reg_dst = 1;
