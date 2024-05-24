@@ -40,14 +40,17 @@ always @(*) begin
 
     case (opcode)
         6'b000000: begin // R-type
-            reg_dst = 1;
-            alu_src = 0;
-            mem_to_reg = 0;
-            reg_write = 1;
-            dm_read = 0;
-            dm_write = 0;
-            branch = 0;
-            ALUC = funct;
+        case (funct)
+            6'b100000:begin
+                // reg_dst = 1;
+                // alu_src = 0;
+                // mem_to_reg = 0;
+                // reg_write = 1;
+                // dm_read = 0;
+                // dm_write = 0;
+                // branch = 0;
+                // ALUC = funct;
+            end
         end
         6'b100011: begin // LW
             reg_dst = 0;
