@@ -109,8 +109,7 @@ wire [31:0] npc_addr_out, pc_addr_out; // NPC连接PC 和 PC连接NPC + PC连接IMEM
 wire [31:0] instruction, alu_result, imm32;
 
 //CU Control Line to Module
-
-
+wire CU_to_reg_write;
 //CU -> MUX Control Line
 wire CU_to_MUX_1,CU_to_MUX_2,CU_to_MUX_3,CU_to_MUX_4,CU_to_MUX_5,CU_to_MUX_6,CU_to_MUX_7,CU_to_MUX_8,CU_to_MUX_9,CU_to_MUX_10; //CU控制MUX
 
@@ -174,10 +173,12 @@ regfile regfile (
     .clk_in(clk_in),
     .ena(1'b1),
     .reset(reset),
-    .reg_w(1'b1), // 假设始终写入寄存器
+    .reg_write(CU_to_reg_write), // 假设始终写入寄存器
+
     .RdC(instruction[15:11]), // 目标寄存器
     .RtC(instruction[20:16]), // 第二个源寄存器
     .RsC(instruction[25:21]), // 第一个源寄存器
+    
     .Rd_data_in(MUX_5_to_Rd), // 写入数据
     .Rs_data_out(Rs_to_MUX_7), // 读取数据1
     .Rt_data_out(Rt_to_MUX_8) // 读取数据2
@@ -204,6 +205,7 @@ CU control (
     .funct(instruction[5:0]),
     .ALUC(alu_control),
 
+    .reg_write(CU_to_reg_write),
 
     .MUX_1_sel(CU_to_MUX_1),
     .MUX_2_sel(CU_to_MUX_2),

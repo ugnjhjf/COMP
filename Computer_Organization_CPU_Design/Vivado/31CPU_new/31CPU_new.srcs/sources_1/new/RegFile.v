@@ -3,15 +3,15 @@ module regfile(                 //寄存器堆RegFile，写入为同步，读取为异步
     input  clk_in,             //时钟信号，下降沿有效
     input  ena,             //使能信号端，上升沿有效
     input  reset,               //复位信号，高电平有效（检测上升沿）
-    input  reg_w,               //写信号，高电平时寄存器可写入，低电平不可写入
+    input  reg_write,               //写信号，高电平时寄存器可写入，低电平不可写入
     input  [4:0] RdC,           //Rd对应的寄存器的地址（写入端）
     input  [4:0] RtC,           //Rt对应的寄存器的地址（输出端）
     input  [4:0] RsC,           //Rs对应的寄存器的地址（输出端）
-    input  [31:0] Rd_data_in,   //要向寄存器中写入的值（需拉高reg_w）
+    input  [31:0] Rd_data_in,   //要向寄存器中写入的值（需拉高reg_write）
     output [31:0] Rs_data_out,  //Rs对应的寄存器的输出值
     output [31:0] Rt_data_out,   //Rt对应的寄存器的输出值
 
-        output [31:0] reg_0, 
+    output [31:0] reg_0, 
     output [31:0] reg_1,
     output [31:0] reg_2,
     output [31:0] reg_3,
@@ -122,7 +122,7 @@ begin
         array_reg[30] <= 32'h0;
         array_reg[31] <= 32'h0;
     end
-    else if(ena && reg_w && (RdC != 5'h0)) //ena和reg_w都为高电平，启用寄存器堆且需要写数据，允许写（特别注意：0号寄存器常0，不允许修改，不在写入范围之内）
+    else if(ena && reg_write && (RdC != 5'h0)) //ena和reg_write都为高电平，启用寄存器堆且需要写数据，允许写（特别注意：0号寄存器常0，不允许修改，不在写入范围之内）
         array_reg[RdC] <= Rd_data_in;
 end
 //Test Code
