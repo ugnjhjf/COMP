@@ -68,10 +68,10 @@ begin
     else if (ena && reg_write && (RdC != 5'h0)) begin //ena和reg_write都为高电平，启用寄存器堆且需要写数据，允许写（特别注意：0号寄存器常0，不允许修改，不在写入范围之内）
         array_reg[RdC] <= Rd_data_in;
     end 
-    else if ( I_instru )begin
+    else if ( I_instru && reg_write && (RtC != 5'h0))begin
         array_reg[RtC] <= Rd_data_in;
     end
-
+Problem Here↑
 end
 
  assign reg_0 = array_reg[0];
