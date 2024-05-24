@@ -2,7 +2,7 @@
 
 
 module IMEM(
- input [10:0] addr,
+ input [31:0] addr,
  output [31:0] instr
 );
 

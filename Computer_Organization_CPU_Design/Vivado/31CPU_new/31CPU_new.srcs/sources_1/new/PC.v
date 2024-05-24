@@ -1,8 +1,8 @@
 module PC(
     input clk,
     input reset,
-    input [10:0] addr_in,
-    output reg [10:0] addr_out
+    input [31:0] addr_in,
+    output reg [31:0] addr_out
 );
 
 always @(posedge clk or posedge reset) begin

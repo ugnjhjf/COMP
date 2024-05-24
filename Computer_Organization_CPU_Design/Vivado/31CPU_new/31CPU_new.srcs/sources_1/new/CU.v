@@ -1,18 +1,18 @@
 module CU (
     input clk_in,
     input reset,
-    input [5:0] opcode,  // Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-    input [5:0] funct,   // Ö¸ï¿½î¹¦ï¿½ï¿½ï¿½ë£¨ï¿½ï¿½ï¿½ï¿½ R ï¿½ï¿½Ö¸ï¿½î£©
+    input [5:0] opcode,  // ÀàÐÍÂë
+    input [5:0] funct,   // ²Ù×÷Âë
     input zero,
     input overflow,
 
 //IMEM
-    output reg im_read,      // Ö¸ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Åºï¿?
+    output reg im_read,      // IMEM¶ÁÈ¡
 
 
 //DMEM
-    output reg dm_read,      // ï¿½Ú´ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Åºï¿?
-    output reg dm_write,     // ï¿½Ú´ï¿½Ð´Ê¹ï¿½ï¿½ï¿½Åºï¿½
+    output reg dm_read,      // DMEM¶ÁÐÅºÅ
+    output reg dm_write,     // DMEMÐ´ÐÅºÅ
     output reg  reg_dst,
      output reg  alu_src,
      output reg  mem_to_reg,
@@ -22,10 +22,11 @@ module CU (
     output reg MUX_1_sel,MUX_2_sel,MUX_3_sel,MUX_4_sel,MUX_5_sel,MUX_6_sel,MUX_7_sel,MUX_8_sel,MUX_9_sel,MUX_10_sel,
 
 //ALU
-    output reg [4:0] ALUC,    // ALU ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Åºï¿½
+    output reg [4:0] ALUC,    // ALU Ö¸Áî
 
     //RegFIle
-    output reg reg_ena
+    output reg reg_ena,
+    output reg cat_ena
     
 );
 

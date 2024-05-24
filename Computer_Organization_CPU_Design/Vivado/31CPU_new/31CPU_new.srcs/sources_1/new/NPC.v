@@ -21,8 +21,8 @@
 
 
 module NPC(
-    input [10:0] addr_in,
-    output [10:0] addr_out
+    input [31:0] addr_in,
+    output [31:0] addr_out
 );
 
 assign addr_out = addr_in + 4;

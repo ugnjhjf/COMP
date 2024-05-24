@@ -2,7 +2,7 @@ module CPU31(
     input clk_in,
     input reset,
     output [31:0] inst,
-    output [10:0] pc,
+    output [31:0] pc,
     //Test Code
     output [31:0] ALU_A,
     output [31:0] ALU_B,
@@ -17,22 +17,22 @@ module CPU31(
     output [31:0] ext16_zero_out,
     //RegFIle
     output [4:0] RsC,RtC,RdC,
-    output [31:0] array_reg_ID_0,array_reg_ID_1,
-    output [31:0] array_reg_ID_2,array_reg_ID_3,
-    output [31:0] array_reg_ID_4,array_reg_ID_5,
-    output [31:0] array_reg_ID_6,array_reg_ID_7,
-    output [31:0] array_reg_ID_8,array_reg_ID_9,
-    output [31:0] array_reg_ID_10,array_reg_ID_11,
-    output [31:0] array_reg_ID_12,array_reg_ID_13,
-    output [31:0] array_reg_ID_14,array_reg_ID_15,
-    output [31:0] array_reg_ID_16,array_reg_ID_17,
-    output [31:0] array_reg_ID_18,array_reg_ID_19,
-    output [31:0] array_reg_ID_20,array_reg_ID_21,
-    output [31:0] array_reg_ID_22,array_reg_ID_23,
-    output [31:0] array_reg_ID_24,array_reg_ID_25,
-    output [31:0] array_reg_ID_26,array_reg_ID_27,
-    output [31:0] array_reg_ID_28,array_reg_ID_29,
-    output [31:0] array_reg_ID_30,array_reg_ID_31
+    // output [31:0] array_reg_ID_0,array_reg_ID_1,
+    // output [31:0] array_reg_ID_2,array_reg_ID_3,
+    // output [31:0] array_reg_ID_4,array_reg_ID_5,
+    // output [31:0] array_reg_ID_6,array_reg_ID_7,
+    // output [31:0] array_reg_ID_8,array_reg_ID_9,
+    // output [31:0] array_reg_ID_10,array_reg_ID_11,
+    // output [31:0] array_reg_ID_12,array_reg_ID_13,
+    // output [31:0] array_reg_ID_14,array_reg_ID_15,
+    // output [31:0] array_reg_ID_16,array_reg_ID_17,
+    // output [31:0] array_reg_ID_18,array_reg_ID_19,
+    // output [31:0] array_reg_ID_20,array_reg_ID_21,
+    // output [31:0] array_reg_ID_22,array_reg_ID_23,
+    // output [31:0] array_reg_ID_24,array_reg_ID_25,
+    // output [31:0] array_reg_ID_26,array_reg_ID_27,
+    // output [31:0] array_reg_ID_28,array_reg_ID_29,
+    // output [31:0] array_reg_ID_30,array_reg_ID_31
 
 );
 
@@ -48,17 +48,24 @@ wire CU_to_MUX_1,CU_to_MUX_2,CU_to_MUX_3,CU_to_MUX_4,CU_to_MUX_5,CU_to_MUX_6,CU_
 //EXT16 -> MUX_9
 wire [31:0] EXT16signed_to_MUX_9,EXT16zero_to_MUX_9;
 
+//DMEM
+wire [31:0] Rt_to_DMEM_datain,DMEM_dataout_to_MUX_4;
+//CAT->MUX
+wire [31:0] CAT_to_MUX_2;
+//NPC->IMEM
+wire [31:0] NPC_to_MUX_1,MUX_1_to_MUX_2,MUX_3_to_PC;
 //RegFile -> ALU
 wire [31:0] MUX_7_to_ALU,Rs_to_MUX_7,EXT5_to_MUX_7; //Rs和MUX_7的连线
 wire [31:0] MUX_8_to_ALU,Rt_to_MUX_8,MUX_9_to_MUX_8; //Rt和MUX_8的连线
 wire [31:0] MUX_5_to_Rd,MUX_6_to_MUX_5,MUX_4_to_MUX_5;
+wire [31:0] EXT18signed_to_ADD
 //ALU.in
 wire [4:0] alu_control; // CU控制ALU操作（add/addu）
 //ALU.flag
 wire ZF_to_CU,OF_to_CU;
 
 //MUX Connection(Data)
-wire [31:0] EXT1_to_MUX_6,MUX_10_to_EXT1;
+wire [31:0] EXT1_to_MUX_6,MUX_10_to_EXT1,ADD_1_to_MUX_1,ADD_2_to_MUX_4;
 //MUX Connection(1 Output)
 
 wire sign_to_MUX_10,carry_to_MUX_10;
@@ -66,6 +73,18 @@ wire sign_to_MUX_10,carry_to_MUX_10;
 NPC NPC (
     .addr_in(pc_addr_out),
     .addr_out(npc_addr_out)
+);
+
+MUX2to1 MUX_1(
+    .in0(npc_addr_out),
+    .in1(ADD_to_MUX_1),
+    .sel(CU_to_MUX_1),
+    .out(MUX_1_to_MUX_2)
+);
+
+MUX2to1 MUX_2(
+    .in0(MUX_1_to_MUX_2),
+    .in1(instruction),
 );
 
 // 实例化PC模块
@@ -81,29 +100,6 @@ IMEM imem (
     .addr(pc_addr_out[10:0]),
     .instr(instruction)
 );
-
-// 实例化CU模块
-CU control (
-    .clk_in(clk_in),
-    .reset(reset),
-    .opcode(instruction[31:26]),
-    .funct(instruction[5:0]),
-    .ALUC(alu_control),
-
-
-    .MUX_1_sel(CU_to_MUX_1),
-    .MUX_2_sel(CU_to_MUX_2),
-    .MUX_3_sel(CU_to_MUX_3),
-    .MUX_4_sel(CU_to_MUX_4),
-    .MUX_5_sel(CU_to_MUX_5),
-    .MUX_6_sel(CU_to_MUX_6),
-    .MUX_7_sel(CU_to_MUX_7),
-    .MUX_8_sel(CU_to_MUX_8),
-    .MUX_9_sel(CU_to_MUX_9),
-    .MUX_10_sel(CU_to_MUX_10)
-
-);
-
 // 实例化寄存器文件模块
 regfile regfile (
     .clk_in(clk_in),
@@ -131,9 +127,45 @@ ALU alu (
     .overflow(OF_to_CU)
 );
 
+// 实例化CU模块
+CU control (
+    .clk_in(clk_in),
+    .reset(reset),
+    .opcode(instruction[31:26]),
+    .funct(instruction[5:0]),
+    .ALUC(alu_control),
+
+
+    .MUX_1_sel(CU_to_MUX_1),
+    .MUX_2_sel(CU_to_MUX_2),
+    .MUX_3_sel(CU_to_MUX_3),
+    .MUX_4_sel(CU_to_MUX_4),
+    .MUX_5_sel(CU_to_MUX_5),
+    .MUX_6_sel(CU_to_MUX_6),
+    .MUX_7_sel(CU_to_MUX_7),
+    .MUX_8_sel(CU_to_MUX_8),
+    .MUX_9_sel(CU_to_MUX_9),
+    .MUX_10_sel(CU_to_MUX_10)
+);
+
+DMEM DMEM(
+    .dmem_clk(),
+    .dm_ena(),
+    .dm_write(),
+    .dm_read(),
+    .dm_addr(alu_result),
+    .dm_data_in(Rt_to_DMEM_datain),
+    
+    .dm_data_out
+);
 
 //MUX
-
+MUX2to1 MUX_4(
+.in0(DMEM_dataout_to_MUX_4),
+.in1(ADD_2_to_MUX_4),
+.sel(CU_to_MUX_4),
+.out(MUX_4_to_MUX_5)
+);
 
 MUX2to1 MUX_5(
     .in0(MUX_6_to_MUX_5),
@@ -178,7 +210,6 @@ MUX2to1 MUX_10(
 ext1 ext1(
     .in(MUX_10_to_EXT1),
     .out(EXT1_to_MUX_6)
-
 );
 
 ext16_signed ext16_signed(
@@ -191,6 +222,36 @@ ext16_zero ext16_zero(
     .imm32(EXT16zero_to_MUX_9)
 );
 
+ext5 ext5(
+    .in(instruction[10:6]),
+    .out(EXT5_to_MUX_7)
+);
+
+ext18_signed ext18_signed(
+    .in(instrction[15:0 || 2]),
+    .out(EXT18signed_to_ADD)
+);
+
+ADD ADD_1(
+    .A(EXT18signed_to_ADD),
+    .B(npc_addr_out),
+    .out(ADD_1_to_MUX_1)
+);
+
+ADD ADD_2( //Jump
+    .A(32'd8),
+    .B(pc_addr_out),
+    .out(ADD_2_to_MUX_4)
+);
+
+
+
+CAT CAT(
+    .A(pc_addr_out[31:28]),
+    .B(instruction[25:0]), //偏移在CAT内完成
+    .cat_ena(),
+    .out(CAT_to_MUX_2)
+)
 
 
 
