@@ -42,7 +42,7 @@ wire [31:0] instruction, alu_result, imm32;
 //CU Control Line to Module
 
 
-//CU -> MUX
+//CU -> MUX Control Line
 wire CU_to_MUX_1,CU_to_MUX_2,CU_to_MUX_3,CU_to_MUX_4,CU_to_MUX_5,CU_to_MUX_6,CU_to_MUX_7,CU_to_MUX_8,CU_to_MUX_9,CU_to_MUX_10; //CU¿ØÖÆMUX
 
 //EXT16 -> MUX_9
