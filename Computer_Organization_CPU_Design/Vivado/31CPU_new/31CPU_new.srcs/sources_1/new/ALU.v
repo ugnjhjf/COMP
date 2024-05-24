@@ -61,13 +61,13 @@ module ALU(
             SLT: result = (signA < signB) ? 1 : 0;
             SLTU: result = (A < B) ? 1 : 0;
 
-            SLL: result = A << B[4:0];
-            SRL: result = A >> B[4:0];
-            SRA: result = A >>> B[4:0];
+            SLL: result = A << B;
+            SRL: result = A >> B;
+            SRA: result = A >>> B;
 
-            SLLV: result = A << B[4:0];
-            SRLV: result = A >> B[4:0];
-            SRAV: result = A >>> B[4:0];
+            SLLV: result = A << B;
+            SRLV: result = A >> B;
+            SRAV: result = A >>> B;
 
             LUI: result = {B[15:0], 16'b0};
             default: result = 0;

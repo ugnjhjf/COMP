@@ -22,52 +22,12 @@ module CPU31(
     output [31:0] reg_17,reg_18,reg_19,reg_20,reg_21,reg_22,reg_23,reg_24,
     output [31:0] reg_25,reg_26,reg_27,reg_28,reg_29,reg_30,
     output [31:0] reg_31
-
 );
-wire [31:0] array_reg_ID_0,array_reg_ID_1,array_reg_ID_2,array_reg_ID_3,array_reg_ID_4,array_reg_ID_5,array_reg_ID_6,array_reg_ID_7,array_reg_ID_8;
-wire [31:0] array_reg_ID_9,array_reg_ID_10,array_reg_ID_11,array_reg_ID_12,array_reg_ID_13,array_reg_ID_14,array_reg_ID_15,array_reg_ID_16;
-wire [31:0] array_reg_ID_17,array_reg_ID_18,array_reg_ID_19,array_reg_ID_20,array_reg_ID_21,array_reg_ID_22,array_reg_ID_23,array_reg_ID_24;
-wire [31:0] array_reg_ID_25,array_reg_ID_26,array_reg_ID_27,array_reg_ID_28,array_reg_ID_29,array_reg_ID_30,array_reg_ID_31;
-
-
-
-assign reg_0 = array_reg_ID_0;
-assign reg_1 = array_reg_ID_1;
-assign reg_2 = array_reg_ID_2;
-assign reg_3 = array_reg_ID_3;
-assign reg_4 = array_reg_ID_4;
-assign reg_5 = array_reg_ID_5;
-assign reg_6 = array_reg_ID_6;
-assign reg_7 = array_reg_ID_7;
-assign reg_8 = array_reg_ID_8;
-assign reg_9 = array_reg_ID_9;
-assign reg_10 = array_reg_ID_10;
-assign reg_11 = array_reg_ID_11;
-assign reg_12 = array_reg_ID_12;
-assign reg_13 = array_reg_ID_13;
-assign reg_14 = array_reg_ID_14;
-assign reg_15 = array_reg_ID_15;
-assign reg_16 = array_reg_ID_16;
-assign reg_17 = array_reg_ID_17;
-assign reg_18 = array_reg_ID_18;
-assign reg_19 = array_reg_ID_19;
-assign reg_20 = array_reg_ID_20;
-assign reg_21 = array_reg_ID_21;
-assign reg_22 = array_reg_ID_22;
-assign reg_23 = array_reg_ID_23;
-assign reg_24 = array_reg_ID_24;
-assign reg_25 = array_reg_ID_25;
-assign reg_26 = array_reg_ID_26;
-assign reg_27 = array_reg_ID_27;
-assign reg_28 = array_reg_ID_28;
-assign reg_29 = array_reg_ID_29;
-assign reg_30 = array_reg_ID_30;
-assign reg_31 = array_reg_ID_31;
 
 
 // 实例化CU模块
 
-wire [31:0] Rs_to_MUX_3,MUX_2_to_MUX_3;
+wire [31:0] Rs_to_MUX_3,MUX_3_to_PC,MUX_2_to_MUX_3;
 
 wire [31:0] npc_addr_out, pc_addr_out; // NPC连接PC 和 PC连接NPC + PC连接IMEM
 wire [31:0] instruction, alu_result, imm32;
@@ -85,7 +45,7 @@ wire [31:0] Rt_to_DMEM_datain,DMEM_dataout_to_MUX_4;
 //CAT->MUX
 wire [31:0] CAT_to_MUX_2;
 //NPC->IMEM
-wire [31:0] NPC_to_MUX_1,MUX_1_to_MUX_2,MUX_3_to_PC,ADD_to_MUX_1;
+wire [31:0] NPC_to_MUX_1,MUX_1_to_MUX_2,ADD_to_MUX_1;
 //RegFile -> ALU
 wire [31:0] MUX_7_to_ALU,Rs_to_MUX_7,EXT5_to_MUX_7; //Rs和MUX_7的连线
 wire [31:0] MUX_8_to_ALU,Rt_to_MUX_8,MUX_9_to_MUX_8; //Rt和MUX_8的连线
@@ -139,7 +99,7 @@ PC pc_reg (
 // 实例化IMEM模块
 IMEM imem (
     .addr(pc_addr_out[10:0]),
-    .instr(instruction)
+    .instr(instruction[31:0])
 );
 // 实例化寄存器文件模块
 regfile regfile (
@@ -154,7 +114,16 @@ regfile regfile (
     
     .Rd_data_in(MUX_5_to_Rd), // 写入数据
     .Rs_data_out(Rs_to_MUX_7), // 读取数据1
-    .Rt_data_out(Rt_to_MUX_8) // 读取数据2
+    .Rt_data_out(Rt_to_MUX_8), // 读取数据2
+    
+    .reg_0(reg_0), .reg_1(reg_1), .reg_2(reg_2), .reg_3(reg_3),
+    .reg_4(reg_4), .reg_5(reg_5), .reg_6(reg_6), .reg_7(reg_7),
+    .reg_8(reg_8), .reg_9(reg_9), .reg_10(reg_10), .reg_11(reg_11),
+    .reg_12(reg_12), .reg_13(reg_13), .reg_14(reg_14), .reg_15(reg_15),
+    .reg_16(reg_16), .reg_17(reg_17), .reg_18(reg_18), .reg_19(reg_19),
+    .reg_20(reg_20), .reg_21(reg_21), .reg_22(reg_22), .reg_23(reg_23),
+    .reg_24(reg_24), .reg_25(reg_25), .reg_26(reg_26), .reg_27(reg_27),
+    .reg_28(reg_28), .reg_29(reg_29), .reg_30(reg_30), .reg_31(reg_31)
 );
 
 // 实例化ALU模块
@@ -316,4 +285,8 @@ assign MUX_8_out = MUX_8_to_ALU;
 
 assign array_reg_ID_0 = array_reg_ID_0;
 
+
+assign  RdC = instruction[15:11]; // 目标寄存器
+assign  RtC = instruction[20:16]; // 第二个源寄存器
+assign  RsC = instruction[25:21]; // 第一个源寄存器
 endmodule

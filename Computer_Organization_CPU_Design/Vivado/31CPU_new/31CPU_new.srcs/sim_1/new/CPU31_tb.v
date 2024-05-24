@@ -14,38 +14,10 @@ wire [31:0] ext16_signed_out;
 wire [31:0] ext16_zero_out;
 wire [31:0] ALU_A,ALU_B,ALU_ans;
 
-wire [31:0] array_reg_ID_0;
-wire [31:0] array_reg_ID_1;
-wire [31:0] array_reg_ID_2;
-wire [31:0] array_reg_ID_3;
-wire [31:0] array_reg_ID_4;
-wire [31:0] array_reg_ID_5;
-wire [31:0] array_reg_ID_6;
-wire [31:0] array_reg_ID_7;
-wire [31:0] array_reg_ID_8;
-wire [31:0] array_reg_ID_9;
-wire [31:0] array_reg_ID_10;
-wire [31:0] array_reg_ID_11;
-wire [31:0] array_reg_ID_12;
-wire [31:0] array_reg_ID_13;
-wire [31:0] array_reg_ID_14;
-wire [31:0] array_reg_ID_15;
-wire [31:0] array_reg_ID_16;
-wire [31:0] array_reg_ID_17;
-wire [31:0] array_reg_ID_18;
-wire [31:0] array_reg_ID_19;
-wire [31:0] array_reg_ID_20;
-wire [31:0] array_reg_ID_21;
-wire [31:0] array_reg_ID_22;
-wire [31:0] array_reg_ID_23;
-wire [31:0] array_reg_ID_24;
-wire [31:0] array_reg_ID_25;
-wire [31:0] array_reg_ID_26;
-wire [31:0] array_reg_ID_27;
-wire [31:0] array_reg_ID_28;
-wire [31:0] array_reg_ID_29;
-wire [31:0] array_reg_ID_30;
-wire [31:0] array_reg_ID_31;
+wire [31:0] reg_0, reg_1, reg_2, reg_3, reg_4, reg_5, reg_6, reg_7, reg_8;
+wire [31:0] reg_9, reg_10, reg_11, reg_12, reg_13, reg_14, reg_15, reg_16;
+wire [31:0] reg_17, reg_18, reg_19, reg_20, reg_21, reg_22, reg_23, reg_24;
+wire [31:0] reg_25, reg_26, reg_27, reg_28, reg_29, reg_30, reg_31;
 
 wire [4:0] RdC;
 wire [4:0] RsC;
@@ -79,38 +51,38 @@ CPU31 uut (
     .RdC(RdC),
 
     //Register in RegFIle
-    .reg_0(array_reg_ID_0),
-    .reg_1(array_reg_ID_1),
-    .reg_2(array_reg_ID_2),
-    .reg_3(array_reg_ID_3),
-    .reg_4(array_reg_ID_4),
-    .reg_5(array_reg_ID_5),
-    .reg_6(array_reg_ID_6),
-    .reg_7(array_reg_ID_7),
-    .reg_8(array_reg_ID_8),
-    .reg_9(array_reg_ID_9),
-    .reg_10(array_reg_ID_10),
-    .reg_11(array_reg_ID_11),
-    .reg_12(array_reg_ID_12),
-    .reg_13(array_reg_ID_13),
-    .reg_14(array_reg_ID_14),
-    .reg_15(array_reg_ID_15),
-    .reg_16(array_reg_ID_16),
-    .reg_17(array_reg_ID_17),
-    .reg_18(array_reg_ID_18),
-    .reg_19(array_reg_ID_19),
-    .reg_20(array_reg_ID_20),
-    .reg_21(array_reg_ID_21),
-    .reg_22(array_reg_ID_22),
-    .reg_23(array_reg_ID_23),
-    .reg_24(array_reg_ID_24),
-    .reg_25(array_reg_ID_25),
-    .reg_26(array_reg_ID_26),
-    .reg_27(array_reg_ID_27),
-    .reg_28(array_reg_ID_28),
-    .reg_29(array_reg_ID_29),
-    .reg_30(array_reg_ID_30),
-    .reg_31(array_reg_ID_31)
+ .reg_0(reg_0),
+    .reg_1(reg_1),
+    .reg_2(reg_2),
+    .reg_3(reg_3),
+    .reg_4(reg_4),
+    .reg_5(reg_5),
+    .reg_6(reg_6),
+    .reg_7(reg_7),
+    .reg_8(reg_8),
+    .reg_9(reg_9),
+    .reg_10(reg_10),
+    .reg_11(reg_11),
+    .reg_12(reg_12),
+    .reg_13(reg_13),
+    .reg_14(reg_14),
+    .reg_15(reg_15),
+    .reg_16(reg_16),
+    .reg_17(reg_17),
+    .reg_18(reg_18),
+    .reg_19(reg_19),
+    .reg_20(reg_20),
+    .reg_21(reg_21),
+    .reg_22(reg_22),
+    .reg_23(reg_23),
+    .reg_24(reg_24),
+    .reg_25(reg_25),
+    .reg_26(reg_26),
+    .reg_27(reg_27),
+    .reg_28(reg_28),
+    .reg_29(reg_29),
+    .reg_30(reg_30),
+    .reg_31(reg_31)
 
 );
 
@@ -135,14 +107,14 @@ always @(posedge clk) begin
     $display("Ext16_signed In:%b, Ext16_signed Out:%b, Ext16_zero_out",ext16_signed_in,ext16_signed_out,ext16_zero_out );
     $display("RsC:%b, RtC:%b, RdC:%b",RsC,RtC,RdC);
     $display("MUX_8_out: %b",MUX_8_out);
-    $display("array_reg_ID_0:%b, array_reg_ID_1:%b, array_reg_ID_2:%b, array_reg_ID_3:%b",array_reg_ID_0,array_reg_ID_1,array_reg_ID_2,array_reg_ID_3);
-$display("array_reg_ID_4:%b, array_reg_ID_5:%b, array_reg_ID_6:%b, array_reg_ID_7:%b",array_reg_ID_4,array_reg_ID_5,array_reg_ID_6,array_reg_ID_7);
-$display("array_reg_ID_8:%b, array_reg_ID_9:%b, array_reg_ID_10:%b, array_reg_ID_11:%b",array_reg_ID_8,array_reg_ID_9,array_reg_ID_10,array_reg_ID_11);
-$display("array_reg_ID_12:%b, array_reg_ID_13:%b, array_reg_ID_14:%b, array_reg_ID_15:%b",array_reg_ID_12,array_reg_ID_13,array_reg_ID_14,array_reg_ID_15);
-$display("array_reg_ID_16:%b, array_reg_ID_17:%b, array_reg_ID_18:%b, array_reg_ID_19:%b",array_reg_ID_16,array_reg_ID_17,array_reg_ID_18,array_reg_ID_19);
-$display("array_reg_ID_20:%b, array_reg_ID_21:%b, array_reg_ID_22:%b, array_reg_ID_23:%b",array_reg_ID_20,array_reg_ID_21,array_reg_ID_22,array_reg_ID_23);
-$display("array_reg_ID_24:%b, array_reg_ID_25:%b, array_reg_ID_26:%b, array_reg_ID_27:%b",array_reg_ID_24,array_reg_ID_25,array_reg_ID_26,array_reg_ID_27);
-$display("array_reg_ID_28:%b, array_reg_ID_29:%b, array_reg_ID_30:%b, array_reg_ID_31:%b",array_reg_ID_28,array_reg_ID_29,array_reg_ID_30,array_reg_ID_31);
+   $display("reg_0:%b, reg_1:%b, reg_2:%b, reg_3:%b", reg_0, reg_1, reg_2, reg_3);
+    $display("reg_4:%b, reg_5:%b, reg_6:%b, reg_7:%b", reg_4, reg_5, reg_6, reg_7);
+    $display("reg_8:%b, reg_9:%b, reg_10:%b, reg_11:%b", reg_8, reg_9, reg_10, reg_11);
+    $display("reg_12:%b, reg_13:%b, reg_14:%b, reg_15:%b", reg_12, reg_13, reg_14, reg_15);
+    $display("reg_16:%b, reg_17:%b, reg_18:%b, reg_19:%b", reg_16, reg_17, reg_18, reg_19);
+    $display("reg_20:%b, reg_21:%b, reg_22:%b, reg_23:%b", reg_20, reg_21, reg_22, reg_23);
+    $display("reg_24:%b, reg_25:%b, reg_26:%b, reg_27:%b", reg_24, reg_25, reg_26, reg_27);
+    $display("reg_28:%b, reg_29:%b, reg_30:%b, reg_31:%b", reg_28, reg_29, reg_30, reg_31);
 end
 
 
