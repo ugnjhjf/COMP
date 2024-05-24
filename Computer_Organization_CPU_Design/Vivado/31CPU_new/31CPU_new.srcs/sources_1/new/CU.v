@@ -30,12 +30,14 @@ module CU (
     output reg MUX_9_sel,
     output reg MUX_10_sel,
 
+
     // ALU
     output reg [4:0] ALUC,    
 
     // RegFIle
     output reg reg_ena,
-    output reg cat_ena
+    output reg cat_ena,
+    output reg I_instru
 );
 
 always @(*) begin
@@ -189,6 +191,7 @@ always @(*) begin
         end
         //I-Type
         6'b001000: begin // ADDI
+            I_instru = 1;
             mem_to_reg = 0;
             reg_write = 1;
             dm_read = 0;
@@ -203,6 +206,7 @@ always @(*) begin
             MUX_5_sel = 0;
         end
         6'b001001: begin // ADDIU
+            I_instru = 1;
             mem_to_reg = 0;
             reg_write = 1;
             dm_read = 0;
@@ -219,7 +223,7 @@ always @(*) begin
 
         default: begin
             mem_to_reg = 0;
-            reg_write = 0;
+            reg_write = 1;
             dm_read = 0;
             dm_write = 0;
             branch = 0;

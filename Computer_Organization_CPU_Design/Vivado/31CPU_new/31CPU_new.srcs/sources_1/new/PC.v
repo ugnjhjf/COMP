@@ -14,5 +14,5 @@ always @(posedge clk or posedge reset) begin
     end
 end
 
-assign addr_out = pc_reg - 32'h0040_0000;
+assign addr_out = pc_reg;
 endmodule

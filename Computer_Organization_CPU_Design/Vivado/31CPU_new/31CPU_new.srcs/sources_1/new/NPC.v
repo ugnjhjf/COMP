@@ -25,5 +25,5 @@ module NPC(
     output [31:0] addr_out
 );
 
-assign addr_out = addr_in + 4'b0100;
+assign addr_out = addr_in + 1;
 endmodule

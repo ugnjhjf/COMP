@@ -21,9 +21,15 @@ module CPU31(
     output [31:0] reg_9,reg_10,reg_11,reg_12,reg_13,reg_14,reg_15,reg_16,
     output [31:0] reg_17,reg_18,reg_19,reg_20,reg_21,reg_22,reg_23,reg_24,
     output [31:0] reg_25,reg_26,reg_27,reg_28,reg_29,reg_30,
-    output [31:0] reg_31
+    output [31:0] reg_31,
+    //Test
+    output [31:0] Rd_data_out
+    //Test
 );
 
+//Test
+wire[31:0] Rd_data_out_connect;
+//Test
 
 // 实例化CU模块
 
@@ -33,7 +39,7 @@ wire [31:0] npc_addr_out, pc_addr_out; // NPC连接PC 和 PC连接NPC + PC连接IMEM
 wire [31:0] instruction, alu_result, imm32;
 
 //CU Control Line to Module
-wire CU_to_reg_write;
+wire CU_to_reg_write,CU_to_reg_I_instru;
 //CU -> MUX Control Line
 wire CU_to_MUX_1,CU_to_MUX_2,CU_to_MUX_3,CU_to_MUX_4,CU_to_MUX_5,CU_to_MUX_6,CU_to_MUX_7,CU_to_MUX_8,CU_to_MUX_9,CU_to_MUX_10; //CU控制MUX
 
@@ -69,7 +75,7 @@ NPC NPC (
 
 MUX2to1 MUX_1(
     .in0(npc_addr_out),
-    .in1(ADD_to_MUX_1),
+    .in1(ADD_1_to_MUX_1),
     .sel(CU_to_MUX_1),
     .out(MUX_1_to_MUX_2)
 );
@@ -82,8 +88,8 @@ MUX2to1 MUX_2(
 );
 
 MUX2to1 MUX_3(
-    .in0(MUX_2_to_MUX_3),
-    .in1(Rs_to_MUX_3),
+    .in0(Rs_to_MUX_7),
+    .in1(MUX_2_to_MUX_3),
     .sel(CU_to_MUX_3),
     .out(MUX_3_to_PC)
 );
@@ -92,7 +98,7 @@ MUX2to1 MUX_3(
 PC pc_reg (
     .clk(clk_in),
     .reset(reset),
-    .addr_in(npc_addr_out),
+    .addr_in(MUX_3_to_PC),
     .addr_out(pc_addr_out)
 );
 
@@ -108,10 +114,15 @@ regfile regfile (
     .reset(reset),
     .reg_write(CU_to_reg_write), // 假设始终写入寄存器
 
+    .I_instru(CU_to_reg_I_instru),
+
     .RdC(instruction[15:11]), // 目标寄存器
     .RtC(instruction[20:16]), // 第二个源寄存器
     .RsC(instruction[25:21]), // 第一个源寄存器
     
+    //Test
+    .Rd_data_out(Rd_data_out_connect),
+    //Test
     .Rd_data_in(MUX_5_to_Rd), // 写入数据
     .Rs_data_out(Rs_to_MUX_7), // 读取数据1
     .Rt_data_out(Rt_to_MUX_8), // 读取数据2
@@ -148,6 +159,7 @@ CU control (
     .ALUC(alu_control),
 
     .reg_write(CU_to_reg_write),
+    .I_instru(CU_to_reg_I_instru),
 
     .MUX_1_sel(CU_to_MUX_1),
     .MUX_2_sel(CU_to_MUX_2),
@@ -289,4 +301,8 @@ assign array_reg_ID_0 = array_reg_ID_0;
 assign  RdC = instruction[15:11]; // 目标寄存器
 assign  RtC = instruction[20:16]; // 第二个源寄存器
 assign  RsC = instruction[25:21]; // 第一个源寄存器
+
+//Test
+assign Rd_data_out = Rd_data_out_connect;
+//Test
 endmodule
