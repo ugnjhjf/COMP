@@ -50,7 +50,7 @@ wire [31:0] array_reg_ID_31;
 wire [4:0] RdC;
 wire [4:0] RsC;
 wire [4:0] RtC;
-
+wire [31:0] MUX_8_out;
 
 
 // ÊµÀý»¯CPU31Ä£¿é
@@ -72,6 +72,7 @@ CPU31 uut (
     .ext16_signed_in(ext16_signed_in),
     .ext16_signed_out(ext16_signed_out),
     .ext16_zero_out(ext16_zero_out),
+    .MUX_8_out(MUX_8_out),
     //RegFile
     .RsC(RsC),
     .RtC(RtC),
@@ -133,6 +134,7 @@ always @(posedge clk) begin
     $display("Time: %d, PC: %h, Instruction: %b, ALU_A: %b, ALU_B:%b, ALU_ans: %b, Op:%b, Func: %b", $time, pc, inst,ALU_A,ALU_B,ALU_ans,Op,Func);
     $display("Ext16_signed In:%b, Ext16_signed Out:%b, Ext16_zero_out",ext16_signed_in,ext16_signed_out,ext16_zero_out );
     $display("RsC:%b, RtC:%b, RdC:%b",RsC,RtC,RdC);
+    $display("MUX_8_out: %b",MUX_8_out);
     $display("array_reg_ID_0:%b, array_reg_ID_1:%b, array_reg_ID_2:%b, array_reg_ID_3:%b",array_reg_ID_0,array_reg_ID_1,array_reg_ID_2,array_reg_ID_3);
 $display("array_reg_ID_4:%b, array_reg_ID_5:%b, array_reg_ID_6:%b, array_reg_ID_7:%b",array_reg_ID_4,array_reg_ID_5,array_reg_ID_6,array_reg_ID_7);
 $display("array_reg_ID_8:%b, array_reg_ID_9:%b, array_reg_ID_10:%b, array_reg_ID_11:%b",array_reg_ID_8,array_reg_ID_9,array_reg_ID_10,array_reg_ID_11);

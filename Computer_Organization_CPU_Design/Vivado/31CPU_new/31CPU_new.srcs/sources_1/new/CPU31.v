@@ -12,61 +12,22 @@ module CPU31(
     output [5:0] Func,
     //EXT16_signed
     output [15:0] ext16_signed_in,
-    output [31:0] ext16_signed_out,
+    output [31:0] ext16_signed_out,MUX_8_out,
 
     output [31:0] ext16_zero_out,
     //RegFIle
     output [4:0] RsC,RtC,RdC,
-    output [31:0] array_reg_ID_0,array_reg_ID_1,
-    output [31:0] array_reg_ID_2,array_reg_ID_3,
-    output [31:0] array_reg_ID_4,array_reg_ID_5,
-    output [31:0] array_reg_ID_6,array_reg_ID_7,
-    output [31:0] array_reg_ID_8,array_reg_ID_9,
-    output [31:0] array_reg_ID_10,array_reg_ID_11,
-    output [31:0] array_reg_ID_12,array_reg_ID_13,
-    output [31:0] array_reg_ID_14,array_reg_ID_15,
-    output [31:0] array_reg_ID_16,array_reg_ID_17,
-    output [31:0] array_reg_ID_18,array_reg_ID_19,
-    output [31:0] array_reg_ID_20,array_reg_ID_21,
-    output [31:0] array_reg_ID_22,array_reg_ID_23,
-    output [31:0] array_reg_ID_24,array_reg_ID_25,
-    output [31:0] array_reg_ID_26,array_reg_ID_27,
-    output [31:0] array_reg_ID_28,array_reg_ID_29,
-    output [31:0] array_reg_ID_30,array_reg_ID_31
+    output [31:0] reg_0,reg_1,reg_2,reg_3,reg_4,reg_5,reg_6,reg_7,reg_8,
+    output [31:0] reg_9,reg_10,reg_11,reg_12,reg_13,reg_14,reg_15,reg_16,
+    output [31:0] reg_17,reg_18,reg_19,reg_20,reg_21,reg_22,reg_23,reg_24,
+    output [31:0] reg_25,reg_26,reg_27,reg_28,reg_29,reg_30,
+    output [31:0] reg_31
 
 );
-wire [31:0] reg_0;
-wire [31:0] reg_1;
-wire [31:0] reg_2;
-wire [31:0] reg_3;
-wire [31:0] reg_4;
-wire [31:0] reg_5;
-wire [31:0] reg_6;
-wire [31:0] reg_7;
-wire [31:0] reg_8;
-wire [31:0] reg_9;
-wire [31:0] reg_10;
-wire [31:0] reg_11;
-wire [31:0] reg_12;
-wire [31:0] reg_13;
-wire [31:0] reg_14;
-wire [31:0] reg_15;
-wire [31:0] reg_16;
-wire [31:0] reg_17;
-wire [31:0] reg_18;
-wire [31:0] reg_19;
-wire [31:0] reg_20;
-wire [31:0] reg_21;
-wire [31:0] reg_22;
-wire [31:0] reg_23;
-wire [31:0] reg_24;
-wire [31:0] reg_25;
-wire [31:0] reg_26;
-wire [31:0] reg_27;
-wire [31:0] reg_28;
-wire [31:0] reg_29;
-wire [31:0] reg_30;
-wire [31:0] reg_31;
+wire [31:0] array_reg_ID_0,array_reg_ID_1,array_reg_ID_2,array_reg_ID_3,array_reg_ID_4,array_reg_ID_5,array_reg_ID_6,array_reg_ID_7,array_reg_ID_8;
+wire [31:0] array_reg_ID_9,array_reg_ID_10,array_reg_ID_11,array_reg_ID_12,array_reg_ID_13,array_reg_ID_14,array_reg_ID_15,array_reg_ID_16;
+wire [31:0] array_reg_ID_17,array_reg_ID_18,array_reg_ID_19,array_reg_ID_20,array_reg_ID_21,array_reg_ID_22,array_reg_ID_23,array_reg_ID_24;
+wire [31:0] array_reg_ID_25,array_reg_ID_26,array_reg_ID_27,array_reg_ID_28,array_reg_ID_29,array_reg_ID_30,array_reg_ID_31;
 
 assign reg_0 = array_reg_ID_0;
 assign reg_1 = array_reg_ID_1;
@@ -121,12 +82,12 @@ wire [31:0] Rt_to_DMEM_datain,DMEM_dataout_to_MUX_4;
 //CAT->MUX
 wire [31:0] CAT_to_MUX_2;
 //NPC->IMEM
-wire [31:0] NPC_to_MUX_1,MUX_1_to_MUX_2,MUX_3_to_PC;
+wire [31:0] NPC_to_MUX_1,MUX_1_to_MUX_2,MUX_3_to_PC,ADD_to_MUX_1;
 //RegFile -> ALU
 wire [31:0] MUX_7_to_ALU,Rs_to_MUX_7,EXT5_to_MUX_7; //Rs和MUX_7的连线
 wire [31:0] MUX_8_to_ALU,Rt_to_MUX_8,MUX_9_to_MUX_8; //Rt和MUX_8的连线
 wire [31:0] MUX_5_to_Rd,MUX_6_to_MUX_5,MUX_4_to_MUX_5;
-wire [31:0] EXT18signed_to_ADD
+wire [31:0] EXT18signed_to_ADD_1;
 //ALU.in
 wire [4:0] alu_control; // CU控制ALU操作（add/addu）
 //ALU.flag
@@ -153,6 +114,8 @@ MUX2to1 MUX_1(
 MUX2to1 MUX_2(
     .in0(MUX_1_to_MUX_2),
     .in1(instruction),
+    .sel(CU_to_MUX_2),
+    .out(MUX_2_to_MUX_3)
 );
 
 // 实例化PC模块
@@ -227,7 +190,7 @@ DMEM DMEM(
     .dm_addr(alu_result),
     .dm_data_in(Rt_to_DMEM_datain),
     
-    .dm_data_out
+    .dm_data_out()
 );
 
 //MUX
@@ -299,18 +262,17 @@ ext5 ext5(
 );
 
 ext18_signed ext18_signed(
-    .in(instrction[15:0 || 2]),
-    .out(EXT18signed_to_ADD)
+    .in(instruction[15:0]),
+    .out(EXT18signed_to_ADD_1)
 );
 
-ADD ADD_1(
-    .A(EXT18signed_to_ADD),
+ADD_1 ADD_1(
+    .A(EXT18signed_to_ADD_1),
     .B(npc_addr_out),
     .out(ADD_1_to_MUX_1)
 );
 
-ADD ADD_2( //Jump
-    .A(32'd8),
+ADD_2 ADD_2( //Jump
     .B(pc_addr_out),
     .out(ADD_2_to_MUX_4)
 );
@@ -322,9 +284,7 @@ CAT CAT(
     .B(instruction[25:0]), //偏移在CAT内完成
     .cat_ena(),
     .out(CAT_to_MUX_2)
-)
-
-
+);
 
 assign inst = instruction;
 assign pc = pc_addr_out;
@@ -342,7 +302,8 @@ assign  ext16_signed_in = instruction[15:0];
 assign ext16_signed_out = EXT16signed_to_MUX_9;
 //EXT16 Zero test
 assign ext16_zero_out = EXT16zero_to_MUX_9;
+assign MUX_8_out = MUX_8_to_ALU;
 
-assign array_reg_ID_0 = array_reg_ID_0
+assign array_reg_ID_0 = array_reg_ID_0;
 
 endmodule

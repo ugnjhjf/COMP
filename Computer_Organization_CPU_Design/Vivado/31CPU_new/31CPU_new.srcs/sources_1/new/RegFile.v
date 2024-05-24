@@ -1,15 +1,15 @@
 `timescale 1ns / 1ps
 module regfile(                 //寄存器堆RegFile，写入为同步，读取为异步
-    input  clk_in,             //时钟信号，下降沿有效
-    input  ena,             //使能信号端，上升沿有效
+    input  clk_in,              //时钟信号，下降沿有效
+    input  ena,                 //使能信号端，上升沿有效
     input  reset,               //复位信号，高电平有效（检测上升沿）
-    input  reg_write,               //写信号，高电平时寄存器可写入，低电平不可写入
+    input  reg_write,           //写信号，高电平时寄存器可写入，低电平不可写入
     input  [4:0] RdC,           //Rd对应的寄存器的地址（写入端）
     input  [4:0] RtC,           //Rt对应的寄存器的地址（输出端）
     input  [4:0] RsC,           //Rs对应的寄存器的地址（输出端）
     input  [31:0] Rd_data_in,   //要向寄存器中写入的值（需拉高reg_write）
     output [31:0] Rs_data_out,  //Rs对应的寄存器的输出值
-    output [31:0] Rt_data_out,   //Rt对应的寄存器的输出值
+    output [31:0] Rt_data_out,  //Rt对应的寄存器的输出值
 
     output [31:0] reg_0, 
     output [31:0] reg_1,
@@ -43,7 +43,6 @@ module regfile(                 //寄存器堆RegFile，写入为同步，读取为异步
     output [31:0] reg_29,
     output [31:0] reg_30,
     output [31:0] reg_31
-
     );
 /* 内部用变量 */
 reg [31:0] array_reg [31:0];    //定义寄存器堆
@@ -84,10 +83,11 @@ assign reg_28 = array_reg[28];
 assign reg_29 = array_reg[29];
 assign reg_30 = array_reg[30];
 assign reg_31 = array_reg[31];
-/* 接下来考虑异步写入的问题 */
-always @(negedge clk_in or posedge reset)  //复位信号上升沿或时钟下降沿有效
+
+/* 接下来考虑同步复位和写入 */
+always @(negedge clk_in)  //时钟下降沿有效
 begin
-    if(reset && ena)    //复位信号高电平，复位，全部置0（这里有两种写法：加ena代表只有启用寄存器堆后才能清空，不加代表随时可以，为了数据安全考虑，这里采用前者，防止寄存器数据被无意中清空）
+    if(reset && ena)    //复位信号高电平，复位，全部置0
     begin
         array_reg[0]  <= 32'h0;
         array_reg[1]  <= 32'h0;
@@ -122,9 +122,8 @@ begin
         array_reg[30] <= 32'h0;
         array_reg[31] <= 32'h0;
     end
-    else if(ena && reg_write && (RdC != 5'h0)) //ena和reg_write都为高电平，启用寄存器堆且需要写数据，允许写（特别注意：0号寄存器常0，不允许修改，不在写入范围之内）
+    else if(ena && reg_write) //ena和reg_write都为高电平，启用寄存器堆且需要写数据，允许写（特别注意：0号寄存器常0，不允许修改，不在写入范围之内）
         array_reg[RdC] <= Rd_data_in;
 end
-//Test Code
 
 endmodule

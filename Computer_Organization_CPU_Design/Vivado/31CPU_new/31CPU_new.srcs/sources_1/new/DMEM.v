@@ -12,7 +12,7 @@ reg [31:0] dmem [0:1023];
 
 assign dm_data_out = (dm_read && dm_ena) ? dmem[dm_addr[11:2]] : 32'bz;
 
-always @(posedge clk) begin
+always @(posedge dmem_clk) begin
     if (dm_ena && dm_write) begin
         dmem[dm_addr[11:2]] <= dm_data_in;
     end
