@@ -4,7 +4,6 @@ module CU (
     input reset,
     input [5:0] opcode,  
     input [5:0] funct, 
-    input immediate_flag,
     input zero,
     input overflow,
 
@@ -239,6 +238,7 @@ always @(*) begin
         
 
         default: begin
+            I_instru = 0;
             mem_to_reg = 0;
             reg_write = 1;
             dm_read = 0;

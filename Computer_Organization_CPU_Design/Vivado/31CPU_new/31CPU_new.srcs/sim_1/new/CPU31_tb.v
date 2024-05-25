@@ -100,7 +100,7 @@ initial begin
     reset = 0;
 
     // 仿真运行一段时间
-    #1000;
+    #3000;
     $finish;
 end
 

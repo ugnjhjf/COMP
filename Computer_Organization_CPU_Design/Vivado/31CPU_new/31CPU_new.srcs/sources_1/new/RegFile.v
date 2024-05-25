@@ -4,9 +4,9 @@ module regfile(                 //寄存器堆RegFile，写入为同步，读取为异步
     input  ena,                 //使能信号端，高电平有效
     input  reset,               //复位信号，高电平有效
     input  reg_write,           //写信号，高电平时寄存器可写入，低电平不可写入
-    input  [4:0] RdC,           //Rd对应的寄存器的地址（写入端）
-    input  [4:0] RtC,           //Rt对应的寄存器的地址（输出端）
-    input  [4:0] RsC,           //Rs对应的寄存器的地址（输出端）
+    input  unsigned [4:0] RdC,           //Rd对应的寄存器的地址（写入端）
+    input  unsigned [4:0] RtC,           //Rt对应的寄存器的地址（输出端）
+    input  unsigned [4:0] RsC,           //Rs对应的寄存器的地址（输出端）
     input  I_instru,
     input  [31:0] Rd_data_in,   //要向寄存器中写入的值（需拉高reg_write）
 //Test 1line
