@@ -48,6 +48,7 @@ always @(*) begin
     dm_write = 0;
     branch = 0;
     ALUC = 5'b00000; 
+    
     MUX_1_sel = 0;
     MUX_2_sel = 0;
     MUX_3_sel = 1;
@@ -58,13 +59,17 @@ always @(*) begin
     MUX_8_sel = 0;
     MUX_9_sel = 0;
     MUX_10_sel = 0;
+
     reg_ena = 1;
     cat_ena = 0;
+
+     I_instru = 0;
 
     case (opcode)
         6'b000000: begin // R-type
             case (funct)
                 6'b100000: begin //add
+                    // I_instru = 0;
                     mem_to_reg = 0;
                     reg_write = 1;
                     dm_read = 0;
@@ -82,6 +87,7 @@ always @(*) begin
                     MUX_3_sel = 1;
                 end
                 6'b100001: begin //addu
+
                     mem_to_reg = 0;
                     reg_write = 1;
                     dm_read = 0;

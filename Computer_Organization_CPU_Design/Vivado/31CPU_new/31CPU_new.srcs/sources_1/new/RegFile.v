@@ -64,9 +64,10 @@ begin
         array_reg[30] <= 32'h0;
         array_reg[31] <= 32'h0;
     end
-  
+  //R-instruction write in 
     else if ((!(I_instru))&& ena && reg_write && (RdC != 5'h0)) begin //ena和reg_write都为高电平，启用寄存器堆且需要写数据，允许写（特别注意：0号寄存器常0，不允许修改，不在写入范围之内）
         array_reg[RdC] <= Rd_data_in;
+        //I-instruction write in
     end else if ( I_instru && reg_write && (RtC != 5'h0))begin
         array_reg[RtC] <= Rd_data_in;
     end
