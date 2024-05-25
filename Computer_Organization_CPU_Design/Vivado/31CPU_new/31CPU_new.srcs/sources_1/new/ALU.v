@@ -33,11 +33,14 @@ module ALU(
     parameter LUI = 5'b10000; 
     
     reg [32:0] result;
+
+
     reg overflow_flag;
     
     wire signed [31:0] signA, signB;
     assign signA = A;
     assign signB = B;
+
 
     always @(*) begin
         overflow_flag = 0;

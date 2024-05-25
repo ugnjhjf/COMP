@@ -96,11 +96,11 @@ initial begin
     // 初始化信号
     clk = 0;
     reset = 1;
-    #10;
+    #5;
     reset = 0;
 
     // 仿真运行一段时间
-    #3000;
+    #5000000;
     $finish;
 end
 
