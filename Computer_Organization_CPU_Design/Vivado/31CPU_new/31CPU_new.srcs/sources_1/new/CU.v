@@ -221,6 +221,23 @@ always @(*) begin
             MUX_5_sel = 0;
         end
 
+        6'b001111: begin // LUI
+        I_instru = 1;
+        mem_to_reg = 0;
+        reg_write = 1;
+        dm_read = 0;
+        dm_write = 0;
+        branch = 0;
+        ALUC = 5'b10000; // LUI
+
+        MUX_9_sel = 1;
+        MUX_8_sel = 1;
+        MUX_7_sel = 0;
+        MUX_6_sel = 1;
+        MUX_5_sel = 0;
+        end
+        
+
         default: begin
             mem_to_reg = 0;
             reg_write = 1;
