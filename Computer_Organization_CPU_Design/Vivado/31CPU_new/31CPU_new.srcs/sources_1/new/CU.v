@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 module CU (
-    input clk_in,
+    input clk,
     input reset,
     input [5:0] opcode,  
     input [5:0] funct, 
@@ -39,7 +39,7 @@ module CU (
     output reg I_instru
 );
 
-always @(*) begin
+always @(posedge clk or posedge reset) begin
   
     im_read = 0;
     mem_to_reg = 0;
@@ -47,7 +47,7 @@ always @(*) begin
     dm_read = 0;
     dm_write = 0;
     branch = 0;
-    ALUC = 5'b00000; 
+    ALUC = 5'b11111; 
 
     MUX_1_sel = 0;
     MUX_2_sel = 0;
@@ -242,19 +242,6 @@ always @(*) begin
         MUX_5_sel = 0;
         end
         
-
-        default: begin
-            I_instru = 0;
-            mem_to_reg = 0;
-            reg_write = 1;
-            dm_read = 0;
-            dm_write = 0;
-            branch = 0;
-            ALUC = 5'b00000; // Default ADD
-            MUX_1_sel = 0;
-            MUX_2_sel = 0;
-            MUX_3_sel = 1;
-        end
     endcase
 end
 

@@ -37,22 +37,22 @@ module ALU(
 
     reg overflow_flag;
     
-    wire signed [31:0] signA, signB;
-    assign signA = A;
-    assign signB = B;
+    wire signed [31:0] signedA, signedB;
+    assign signedA = A;
+    assign signedB = B;
 
 
     always @(*) begin
         overflow_flag = 0;
         case(ALUC)
             ADD: begin
-                result = A + B;
-                overflow_flag = (signA[31] == signB[31]) && (result[31] != signA[31]);
+                result = signedA + signedB;
+                // overflow_flag = (signA[31] == signB[31]) && (result[31] != signA[31]);
             end
             ADDU: result = A + B;
             SUB: begin
-                result = A - B;
-                overflow_flag = (signA[31] != signB[31]) && (result[31] != signA[31]);
+                result = signedA - signedB;
+                // overflow_flag = (signA[31] != signB[31]) && (result[31] != signA[31]);
             end
             SUBU: result = A - B;
             
@@ -61,7 +61,7 @@ module ALU(
             XOR: result = A ^ B;
             NOR: result = ~(A | B);
 
-            SLT: result = (signA < signB) ? 1 : 0;
+            SLT: result = (signedA < signedB) ? 1 : 0;
             SLTU: result = (A < B) ? 1 : 0;
 
             SLL: result = A << B;

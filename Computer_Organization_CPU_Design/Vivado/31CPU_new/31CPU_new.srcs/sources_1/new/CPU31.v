@@ -152,7 +152,7 @@ ALU alu (
 
 // ÊµÀý»¯CUÄ£¿é
 CU control (
-    .clk_in(clk_in),
+    .clk(clk_in),
     .reset(reset),
     .opcode(instruction[31:26]),
     .funct(instruction[5:0]),
