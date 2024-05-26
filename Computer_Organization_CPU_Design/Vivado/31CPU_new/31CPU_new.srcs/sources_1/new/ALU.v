@@ -1,7 +1,9 @@
+`timescale 1ns / 1ps
 module ALU(
     input [4:0] ALUC,  
     input [31:0] A,
     input [31:0] B,
+    // input ena,
     output [31:0] alu_out,
     output sign,
     output carry,

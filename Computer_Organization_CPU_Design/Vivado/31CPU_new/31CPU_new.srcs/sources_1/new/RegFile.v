@@ -24,8 +24,8 @@ module regfile(                 //寄存器堆RegFile，写入为同步，读取为异步
 reg [31:0] array_reg [31:0];    //定义寄存器堆
 
 /* 赋值，异步读取 */
-assign Rs_data_out = ena ? array_reg[RsC] : 32'bz;
-assign Rt_data_out = ena ? array_reg[RtC] : 32'bz;  //只要使能端为高电平（启用寄存器堆）就随时可以读取数据
+assign  Rs_data_out = ena ? array_reg[RsC] : 32'bz;
+assign  Rt_data_out = ena ? array_reg[RtC] : 32'bz;  //只要使能端为高电平（启用寄存器堆）就随时可以读取数据
 
 /* 接下来考虑同步复位和写入 */
 always @(negedge clk_in)  //时钟下降沿有效

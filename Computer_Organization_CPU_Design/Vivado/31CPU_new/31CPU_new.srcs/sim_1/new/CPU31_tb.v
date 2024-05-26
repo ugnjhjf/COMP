@@ -25,7 +25,6 @@ wire [4:0] RsC;
 wire [4:0] RtC;
 wire [31:0] MUX_8_out;
 
-
 // 实例化CPU31模块
 CPU31 uut (
     .clk_in(clk),
@@ -33,7 +32,6 @@ CPU31 uut (
     .inst(inst),
     .pc(pc),
 
-    
     //TEST
     .ALU_A(ALU_A),
     .ALU_B(ALU_B),
@@ -54,7 +52,7 @@ CPU31 uut (
     .Rd_data_out(Rd_data_out),
 
     //Register in RegFIle
- .reg_0(reg_0),
+    .reg_0(reg_0),
     .reg_1(reg_1),
     .reg_2(reg_2),
     .reg_3(reg_3),
@@ -86,7 +84,6 @@ CPU31 uut (
     .reg_29(reg_29),
     .reg_30(reg_30),
     .reg_31(reg_31)
-
 );
 
 // 时钟信号生成
@@ -98,19 +95,19 @@ initial begin
     reset = 1;
     #5;
     reset = 0;
-
-    // 仿真运行一段时间
-    #5000000;
+    
+    // 仿真运行更长时间
+    #100000000;
     $finish;
 end
 
 // 监视器，用于监视PC和指令
 always @(posedge clk) begin
-    $display("Time: %d, PC: %h, Instruction: %b, ALU_A: %b, ALU_B:%b, ALU_ans: %b, Op:%b, Func: %b", $time, pc, inst,ALU_A,ALU_B,ALU_ans,Op,Func);
-    $display("Ext16_signed In:%b, Ext16_signed Out:%b, Ext16_zero_out",ext16_signed_in,ext16_signed_out,ext16_zero_out );
-    $display("RsC:%b, RtC:%b, RdC:%b",RsC,RtC,RdC);
-    $display("MUX_8_out: %b",MUX_8_out);
-   $display("reg_0:%b, reg_1:%b, reg_2:%b, reg_3:%b", reg_0, reg_1, reg_2, reg_3);
+    $display("Time: %d, PC: %h, Instruction: %b, ALU_A: %b, ALU_B:%b, ALU_ans: %b, Op:%b, Func: %b", $time, pc, inst, ALU_A, ALU_B, ALU_ans, Op, Func);
+    $display("Ext16_signed In:%b, Ext16_signed Out:%b, Ext16_zero_out", ext16_signed_in, ext16_signed_out, ext16_zero_out );
+    $display("RsC:%b, RtC:%b, RdC:%b", RsC, RtC, RdC);
+    $display("MUX_8_out: %b", MUX_8_out);
+    $display("reg_0:%b, reg_1:%b, reg_2:%b, reg_3:%b", reg_0, reg_1, reg_2, reg_3);
     $display("reg_4:%b, reg_5:%b, reg_6:%b, reg_7:%b", reg_4, reg_5, reg_6, reg_7);
     $display("reg_8:%b, reg_9:%b, reg_10:%b, reg_11:%b", reg_8, reg_9, reg_10, reg_11);
     $display("reg_12:%b, reg_13:%b, reg_14:%b, reg_15:%b", reg_12, reg_13, reg_14, reg_15);
@@ -118,9 +115,7 @@ always @(posedge clk) begin
     $display("reg_20:%b, reg_21:%b, reg_22:%b, reg_23:%b", reg_20, reg_21, reg_22, reg_23);
     $display("reg_24:%b, reg_25:%b, reg_26:%b, reg_27:%b", reg_24, reg_25, reg_26, reg_27);
     $display("reg_28:%b, reg_29:%b, reg_30:%b, reg_31:%b", reg_28, reg_29, reg_30, reg_31);
-    $display("Rd_data_out: %b",Rd_data_out);
+    $display("Rd_data_out: %b", Rd_data_out);
 end
-
-
 
 endmodule

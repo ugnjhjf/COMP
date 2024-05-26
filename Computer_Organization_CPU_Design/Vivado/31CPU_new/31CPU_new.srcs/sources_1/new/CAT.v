@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module CAT(
   input [3:0] A,
   input [25:0] B,

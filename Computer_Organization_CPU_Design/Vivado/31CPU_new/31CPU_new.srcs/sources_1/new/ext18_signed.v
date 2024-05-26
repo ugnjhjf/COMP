@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module ext18_signed(
     input [17:0] in,    // 输入18位有符号数
     output [31:0] out   // 输出32位有符号数

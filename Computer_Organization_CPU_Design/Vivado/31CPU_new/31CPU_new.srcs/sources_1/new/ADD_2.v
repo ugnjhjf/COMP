@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module ADD_2(
     input [31:0] B,
     output [31:0] out

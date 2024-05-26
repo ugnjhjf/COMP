@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module CPU31(
     input clk_in,
     input reset,
@@ -42,7 +43,7 @@ wire [31:0] instruction, alu_result, imm32;
 wire CU_to_reg_write,CU_to_reg_I_instru;
 //CU -> MUX Control Line
 wire CU_to_MUX_1,CU_to_MUX_2,CU_to_MUX_3,CU_to_MUX_4,CU_to_MUX_5,CU_to_MUX_6,CU_to_MUX_7,CU_to_MUX_8,CU_to_MUX_9,CU_to_MUX_10; //CU控制MUX
-
+wire alu_ena;
 //EXT16 -> MUX_9
 wire [31:0] EXT16signed_to_MUX_9,EXT16zero_to_MUX_9;
 
@@ -61,7 +62,7 @@ wire [31:0] EXT18signed_to_ADD_1;
 wire [4:0] alu_control; // CU控制ALU操作（add/addu）
 //ALU.flag
 wire ZF_to_CU,OF_to_CU;
-
+wire reg_ena;
 //MUX Connection(Data)
 wire [31:0] EXT1_to_MUX_6,MUX_10_to_EXT1,ADD_1_to_MUX_1,ADD_2_to_MUX_4;
 //MUX Connection(1 Output)
@@ -110,7 +111,7 @@ IMEM imem (
 // 实例化寄存器文件模块
 regfile regfile (
     .clk_in(clk_in),
-    .ena(1'b1),
+    .ena(reg_ena),
     .reset(reset),
     .reg_write(CU_to_reg_write), // 假设始终写入寄存器
 
@@ -152,11 +153,13 @@ ALU alu (
 
 // 实例化CU模块
 CU control (
-    .clk(clk_in),
+
     .reset(reset),
     .opcode(instruction[31:26]),
     .funct(instruction[5:0]),
     .ALUC(alu_control),
+    // .alu_ena(alu_ena),
+    .reg_ena(reg_ena),
 
     .reg_write(CU_to_reg_write),
     .I_instru(CU_to_reg_I_instru),
@@ -295,7 +298,7 @@ assign ext16_signed_out = EXT16signed_to_MUX_9;
 assign ext16_zero_out = EXT16zero_to_MUX_9;
 assign MUX_8_out = MUX_8_to_ALU;
 
-assign array_reg_ID_0 = array_reg_ID_0;
+
 
 
 assign  RdC = instruction[15:11]; // 目标寄存器

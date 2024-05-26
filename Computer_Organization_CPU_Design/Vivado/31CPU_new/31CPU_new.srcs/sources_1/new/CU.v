@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 module CU (
-    input clk,
+
     input reset,
     input [5:0] opcode,  
     input [5:0] funct, 
@@ -9,6 +9,7 @@ module CU (
 
     // IMEM
     output reg im_read,      
+
 
     // DMEM
     output reg dm_read,      
@@ -29,9 +30,12 @@ module CU (
     output reg MUX_9_sel,
     output reg MUX_10_sel,
 
+    output reg reg_ena;
+
 
     // ALU
     output reg [4:0] ALUC,    
+    output reg alu_ena,
 
     // RegFIle
     output reg reg_ena,
@@ -39,8 +43,9 @@ module CU (
     output reg I_instru
 );
 
-always @(posedge clk or posedge reset) begin
-  
+always @(*) begin
+    alu_ena = 0;
+    reg_ena = 0;
     im_read = 0;
     mem_to_reg = 0;
     reg_write = 0;
@@ -60,13 +65,15 @@ always @(posedge clk or posedge reset) begin
     MUX_9_sel = 0;
     MUX_10_sel = 0;
 
-    reg_ena = 1;
+    reg_ena = 0;
     cat_ena = 0;
 
     I_instru = 0;
 
     case (opcode)
         6'b000000: begin // R-type
+            alu_ena = 1;
+            reg_ena = 1;
             case (funct)
                 6'b100000: begin //add
                     I_instru = 0;
@@ -196,6 +203,9 @@ always @(posedge clk or posedge reset) begin
         end
         //I-Type
         6'b001000: begin // ADDI
+        reg_ena = 1;
+        alu_ena = 1;
+
             I_instru = 1;
             mem_to_reg = 0;
             reg_write = 1;
@@ -211,6 +221,9 @@ always @(posedge clk or posedge reset) begin
             MUX_5_sel = 0;
         end
         6'b001001: begin // ADDIU
+            reg_ena = 1;
+            alu_ena = 1;
+
             I_instru = 1;
             mem_to_reg = 0;
             reg_write = 1;
@@ -225,8 +238,29 @@ always @(posedge clk or posedge reset) begin
             MUX_6_sel = 1;
             MUX_5_sel = 0;
         end
+        6'b001101: begin // ORI
+        reg_ena = 1;
+        alu_ena = 1;
 
+            I_instru = 1;
+            mem_to_reg = 0;
+            reg_write = 1;
+            dm_read = 0;
+            dm_write = 0;
+            branch = 0;
+            ALUC = 5'b00000; // ORI
+
+            MUX_9_sel = 0;
+            MUX_8_sel = 1;
+            MUX_7_sel = 0;
+            MUX_6_sel = 1;
+            MUX_5_sel = 0;
+        end
         6'b001111: begin // LUI
+
+        alu_ena = 1;
+        reg_ena = 1;
+        
         I_instru = 1;
         mem_to_reg = 0;
         reg_write = 1;
@@ -241,7 +275,6 @@ always @(posedge clk or posedge reset) begin
         MUX_6_sel = 1;
         MUX_5_sel = 0;
         end
-        
     endcase
 end
 

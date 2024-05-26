@@ -1,3 +1,6 @@
+addi $28,$0, 0x0000
+addi $29,$0, 0x0000
+
 sll $0,$0,0
 addiu $0,$0,0xffffffff
 addiu $1,$0,0x0001

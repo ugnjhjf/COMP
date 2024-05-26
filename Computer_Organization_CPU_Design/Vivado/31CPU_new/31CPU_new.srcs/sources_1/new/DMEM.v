@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module DMEM(
     input dmem_clk,
     input dm_ena,
