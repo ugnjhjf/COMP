@@ -4,6 +4,8 @@ module CPU31_tb;
 
 reg clk;
 reg reset;
+wire reg_ena;
+wire reg_write;
 wire [31:0] inst;
 wire [31:0] pc;
 wire [4:0] ALUC;
@@ -33,6 +35,8 @@ CPU31 uut (
     .pc(pc),
 
     //TEST
+    .reg_ena(reg_ena),
+    .reg_write(reg_write),
     .ALU_A(ALU_A),
     .ALU_B(ALU_B),
     .ALU_ans(ALU_ans),
@@ -87,7 +91,7 @@ CPU31 uut (
 );
 
 // 时钟信号生成
-always #5 clk = ~clk;
+always #50 clk = ~clk;
 
 initial begin
     // 初始化信号
@@ -115,6 +119,7 @@ always @(posedge clk) begin
     $display("reg_20:%b, reg_21:%b, reg_22:%b, reg_23:%b", reg_20, reg_21, reg_22, reg_23);
     $display("reg_24:%b, reg_25:%b, reg_26:%b, reg_27:%b", reg_24, reg_25, reg_26, reg_27);
     $display("reg_28:%b, reg_29:%b, reg_30:%b, reg_31:%b", reg_28, reg_29, reg_30, reg_31);
+    $display("reg_write: %b,reg_ena",reg_write,reg_ena);
     $display("Rd_data_out: %b", Rd_data_out);
 end
 

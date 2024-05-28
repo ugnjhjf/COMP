@@ -24,7 +24,8 @@ module CPU31(
     output [31:0] reg_25,reg_26,reg_27,reg_28,reg_29,reg_30,
     output [31:0] reg_31,
     //Test
-    output [31:0] Rd_data_out
+    output [31:0] Rd_data_out,
+    output reg_ena,reg_write
     //Test
 );
 
@@ -38,6 +39,9 @@ wire [31:0] Rs_to_MUX_3,MUX_3_to_PC,MUX_2_to_MUX_3;
 
 wire [31:0] npc_addr_out, pc_addr_out; // NPC连接PC 和 PC连接NPC + PC连接IMEM
 wire [31:0] instruction, alu_result, imm32;
+
+//CU->DMEM
+wire CU_to_DMEM_read,CU_to_DMEM_ena,CU_to_DMEM_write;
 
 //CU Control Line to Module
 wire CU_to_reg_write,CU_to_reg_I_instru;
@@ -161,6 +165,14 @@ CU control (
     // .alu_ena(alu_ena),
     .reg_ena(reg_ena),
 
+    //DMEM
+    .dm_ena(CU_to_DMEM_ena),
+    .dm_write(CU_to_DMEM_write),
+    .dm_read(CU_to_DMEM_read),
+
+    
+    //MUX
+
     .reg_write(CU_to_reg_write),
     .I_instru(CU_to_reg_I_instru),
 
@@ -177,10 +189,10 @@ CU control (
 );
 
 DMEM DMEM(
-    .dmem_clk(),
-    .dm_ena(),
-    .dm_write(),
-    .dm_read(),
+    .dmem_clk(clk_in),
+    .dm_ena(CU_to_DMEM_ena),
+    .dm_write(CU_to_DMEM_write),
+    .dm_read(CU_to_DMEM_read),
     .dm_addr(alu_result),
     .dm_data_in(Rt_to_DMEM_datain),
     
@@ -307,5 +319,8 @@ assign  RsC = instruction[25:21]; // 第一个源寄存器
 
 //Test
 assign Rd_data_out = Rd_data_out_connect;
+assign reg_ena = CU_to_reg_write;
+assign reg_write = CU_to_reg_write;
+
 //Test
 endmodule

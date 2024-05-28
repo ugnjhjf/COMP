@@ -39,9 +39,9 @@ module ALU(
 
     reg overflow_flag;
     
-    wire signed [31:0] signedA, signedB;
-    assign signedA = A;
-    assign signedB = B;
+    wire  [31:0] signedA, signedB;
+    assign  signedA = A;
+    assign  signedB = B;
 
 
     always @(*) begin
@@ -63,7 +63,7 @@ module ALU(
             XOR: result = A ^ B;
             NOR: result = ~(A | B);
 
-            SLT: result = (signedA < signedB) ? 1 : 0;
+            SLT: result = (A < B) ? 1 : 0;
             SLTU: result = (A < B) ? 1 : 0;
 
             SLL: result = A << B;

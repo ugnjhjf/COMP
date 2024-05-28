@@ -22,7 +22,7 @@
 
 module ext16_zero(
     input[15:0] imm16,
-    output unsigned [31:0]  imm32
+    output [31:0]  imm32
 );
 
     assign imm32 = {16'b0 , imm16};
