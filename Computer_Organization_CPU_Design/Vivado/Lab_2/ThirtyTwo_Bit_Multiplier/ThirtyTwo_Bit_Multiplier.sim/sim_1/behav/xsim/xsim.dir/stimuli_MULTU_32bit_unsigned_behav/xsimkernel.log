@@ -1,7 +1,0 @@
-Running: xsim.dir/stimuli_MULTU_32bit_unsigned_behav/xsimk.exe -simmode gui -wdb stimuli_MULTU_32bit_unsigned_behav.wdb -simrunnum 0 -socket 50351
-Design successfully loaded
-Design Loading Memory Usage: 5928 KB (Peak: 5928 KB)
-Design Loading CPU Usage: 46 ms
-Simulation completed
-Simulation Memory Usage: 6588 KB (Peak: 6588 KB)
-Simulation CPU Usage: 61 ms

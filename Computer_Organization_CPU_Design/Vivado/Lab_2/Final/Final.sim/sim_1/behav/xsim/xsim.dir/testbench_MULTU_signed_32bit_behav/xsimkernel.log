@@ -1,7 +1,0 @@
-Running: xsim.dir/testbench_MULTU_signed_32bit_behav/xsimk.exe -simmode gui -wdb testbench_MULTU_signed_32bit_behav.wdb -simrunnum 0 -socket 50632
-Design successfully loaded
-Design Loading Memory Usage: 5844 KB (Peak: 5844 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 6464 KB (Peak: 6464 KB)
-Simulation CPU Usage: 15 ms
