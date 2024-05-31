@@ -2,15 +2,22 @@
   <div>
     <div><h1>2159195岑子威 SHUM Tsz Wai</h1></div>
     <div id="app">
-      <!-- <img src="./assets/logo.png"> -->
+      <p>{{ greetingMessage }}</p>
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
+import greeting from "./SHUMTszWai.js";
+
 export default {
   name: "App",
+  data() {
+    return {
+      greetingMessage: greeting("Shum Tsz Wai"),
+    };
+  },
 };
 </script>
 
