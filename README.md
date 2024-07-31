@@ -1,3 +1,4 @@
 # Computer Science & Engineering source and code
 
-## Plagiarism is a serious academic offense. Reference is welcome ~
+During The Hong Kong Polytechnic University, TongJi University
+
