@@ -1,0 +1,40 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/ip/dist_mem_gen_0/sim/dist_mem_gen_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dist_mem_gen_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/ADD_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ADD_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/ADD_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ADD_2
+WARNING: [VRFC 10-986] literal value truncated to fit in 1 bits [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/ADD_2.v:6]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CAT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CAT
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU31
+WARNING: [VRFC 10-1315] redeclaration of ansi port reg_ena is not allowed [C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CPU31.v:69]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/CU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CU
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/DMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/IMEM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IMEM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/MUX.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX2to1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/NPC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NPC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/RegFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/ext1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ext1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/ext16_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ext16_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/ext16_zero.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ext16_zero
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/ext18_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ext18_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sources_1/new/ext5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ext5
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ugnjhjf/Desktop/COMP_P/Computer_Organization_CPU_Design/Vivado/31CPU_new/31CPU_new.srcs/sim_1/new/CPU31_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU31_tb

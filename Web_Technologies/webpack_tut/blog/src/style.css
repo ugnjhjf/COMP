@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #f0f0f0
+}
+li{
+    padding: 12px;
+}
+
+img{
+    max-width: 500px;
+}

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-2L" LaunchTime="1716370292">
+  <File Type="PWROPT-DCP" Name="CPU31_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="CPU31_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="CPU31.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="CPU31_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="CPU31_reports.tcl"/>
+  <File Type="BG-DRC" Name="CPU31.drc"/>
+  <File Type="OPT-DCP" Name="CPU31_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="CPU31.hwdef"/>
+  <File Type="OPT-DRC" Name="CPU31_drc_opted.rpt"/>
+  <File Type="PLACE-DCP" Name="CPU31_placed.dcp"/>
+  <File Type="PLACE-IO" Name="CPU31_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="CPU31_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="CPU31_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="CPU31_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="CPU31_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="CPU31_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="CPU31_physopt.dcp"/>
+  <File Type="BG-BIT" Name="CPU31.bit"/>
+  <File Type="ROUTE-ERROR-DCP" Name="CPU31_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="CPU31_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="CPU31_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="CPU31_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="CPU31_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="CPU31.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="CPU31_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="CPU31.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="CPU31_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="CPU31.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="CPU31_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="CPU31.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="CPU31_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="CPU31_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="CPU31_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="CPU31_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="CPU31_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="CPU31_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="CPU31_timing_summary_routed.rpx"/>
+  <File Type="RDI-RDI" Name="CPU31.vdi"/>
+  <File Type="ROUTE-CLK" Name="CPU31_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="CPU31_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="CPU31_postroute_physopt_bb.dcp"/>
+  <File Type="BITSTR-NKY" Name="CPU31.nky"/>
+  <File Type="BITSTR-BMM" Name="CPU31_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="CPU31.mmi"/>
+  <File Type="BITSTR-LTX" Name="CPU31.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="CPU31.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/ALU.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/CU.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/IMEM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/NPC.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/PC.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RegFile.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/CPU31.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ext16_signed.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ext16_zero.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/MUX.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DMEM.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ext1.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ext18_signed.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ext5.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../coe_files/1_addiu.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="CPU31"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="dist_mem_gen_0"/>
+</GenRun>
