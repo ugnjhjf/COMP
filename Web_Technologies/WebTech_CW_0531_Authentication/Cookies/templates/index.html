@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户访问记录 2159195岑子威</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>欢迎回来!</h2>
+        {% if last_visit %} 
+        <p>您上次访问时间是：<strong>{{ last_visit }}</strong></p>
+        <p>2159195 岑子威</p>
+
+        {% else %}
+        <p>这是您第一次访问！</p>
+        {% endif %}
+    </div>
+    <script>
+        
+    </script>
+    
+
+</body>
+
+</html>

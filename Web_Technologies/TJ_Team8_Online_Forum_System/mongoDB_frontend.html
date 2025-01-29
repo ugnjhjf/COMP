@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Form</title>
+    <!-- 引入 Axios (从 CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Register User</h1>
+    <form id="registerForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // 阻止表单的默认提交行为
+
+          const username = document.getElementById("username").value;
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // 使用 axios 发送 POST 请求
+          axios
+            .post("https://forum.dbms.gnetwork.space/register", {
+              username: username,
+              email: email,
+              password: password,
+            })
+            .then(function (response) {
+              console.log(response.data); // 处理响应的数据
+              alert("Registration successful!"); // 提示用户注册成功
+            })
+            .catch(function (error) {
+              console.error("Registration failed:", error); // 错误处理
+              alert("Registration failed. Please try again."); // 提示用户注册失败
+            });
+        });
+    </script>
+  </body>
+</html>

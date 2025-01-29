@@ -1,0 +1,3 @@
+username: echidna,password: 123456,email: rokidna@gnetwork.space
+username: echidna,password: 123456,email: echidna@gnetwork.space
+username: echidna, password: 123456, email: rokidna@gnetwork.space
